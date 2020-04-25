@@ -23,7 +23,10 @@ violator_songs_list = [
 # Обратите внимание, что делать много вычислений внутри print() - плохой стиль.
 # Лучше заранее вычислить необходимое, а затем в print(xxx, yyy, zzz)
 
-# TODO здесь ваш код
+# возможно такое же применение как и во второй части задачи, а именно 2 пример
+all_time = float(violator_songs_list[3][1]+violator_songs_list[5][1]+violator_songs_list[8][1])
+print('Три песни звучат', round(all_time, 2), 'минут')
+
 
 # Есть словарь песен группы Depeche Mode
 violator_songs_dict = {
@@ -41,4 +44,19 @@ violator_songs_dict = {
 # распечатайте общее время звучания трех песен: 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress'
 #   А другие три песни звучат ХХХ минут
 
-# TODO здесь ваш код
+# 1 вариант
+
+all_time_next = int(violator_songs_dict['Sweetest Perfection'] + violator_songs_dict['Policy of Truth'] + violator_songs_dict['Blue Dress'])
+
+print('А другие три песни звучат', all_time_next, 'минут')
+
+
+# 2 вариант
+
+a = violator_songs_dict['Sweetest Perfection']
+b = violator_songs_dict['Policy of Truth']
+c = violator_songs_dict['Blue Dress']
+
+summa = int(a + b + c)
+print('А другие три песни звучат', summa, 'минут')
+
