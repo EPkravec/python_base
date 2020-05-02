@@ -15,6 +15,7 @@ goods = {
 store = {
     '12345': [
         {'quantity': 27, 'price': 42},
+        {'quantity': 27, 'price': 42},
     ],
     '23456': [
         {'quantity': 22, 'price': 510},
@@ -35,6 +36,8 @@ store = {
 # например для ламп
 
 lamps_cost = store[goods['Лампа']][0]['quantity'] * store[goods['Лампа']][0]['price']
+table_cost = store[goods['Стол']][1]['quantity'] * store[goods['Стол']][1]['price']
+
 # или проще (/сложнее ?)
 lamp_code = goods['Лампа']
 lamps_item = store[lamp_code][0]
