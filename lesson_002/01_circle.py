@@ -37,10 +37,10 @@ point_2 = point['point_2']
 
 radius_for_point_1 = (point_1[0] ** 2 + point_1[1] ** 2) ** 0.5
 radius_for_point_2 = (point_2[0] ** 2 + point_2[1] ** 2) ** 0.5
-# TODO практически все верно, но если точка попадает на окружность, то считается, что она попала в круг,
-#  кое что надо добавить
-print(radius > radius_for_point_1)
-print(radius > radius_for_point_2)
+# TODO немогу согласиться с Вами так как точка более 42 единиц, по замечанию дописал изменение >=,
+# TODO но в задании нет контретных указаний о том какая переменная (radius point 1 end point 2) должна быть целая или дробная
+print(radius >= radius_for_point_1)
+print(radius >= radius_for_point_2)
 
 # Аналогично для другой точки
 point_2 = (30, 30)
