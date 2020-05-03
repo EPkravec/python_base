@@ -11,9 +11,10 @@ radius = 42
 #       точность указывается в функции round()
 
 pi = 3.1415926
-s = radius**2*pi
+s = radius ** 2 * pi
 print(round(s, 4))
-# todo почему не возможно в данном случае использовать s = s.tofised(4) ? да и не полчается
+# почему не возможно в данном случае использовать s = s.tofised(4) ? да и не полчается
+# - Нельзя потому, что в python нет такой ф-ии), в js есть. Ты сделал правильно
 # Далее, пусть есть координаты точки
 point_1 = (23, 34)
 # где 23 - координата х, 34 - координата у
@@ -34,8 +35,10 @@ distanse = dict()
 point_1 = point['point_1']
 point_2 = point['point_2']
 
-radius_for_point_1 = (point_1[0]**2 + point_1[1]**2)**0.5
-radius_for_point_2 = (point_2[0]**2 + point_2[1]**2)**0.5
+radius_for_point_1 = (point_1[0] ** 2 + point_1[1] ** 2) ** 0.5
+radius_for_point_2 = (point_2[0] ** 2 + point_2[1] ** 2) ** 0.5
+# TODO практически все верно, но если точка попадает на окружность, то считается, что она попала в круг,
+#  кое что надо добавить
 print(radius > radius_for_point_1)
 print(radius > radius_for_point_2)
 
@@ -50,5 +53,3 @@ point_2 = (30, 30)
 # 77777.7777
 # False
 # False
-
-
