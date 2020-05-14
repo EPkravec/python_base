@@ -10,5 +10,29 @@
 user_input = input("Введите, пожалуйста, номер месяца: ")
 month = int(user_input)
 print('Вы ввели', month)
-
-# TODO здесь ваш код
+if month == 1:
+    print('В Январе 31 день')
+elif month == 2:
+    print('В Феврале 29 дней')
+elif month == 3:
+    print('В Марте 31 день')
+elif month == 4:
+    print('В Аплере 30 дней')
+elif month == 5:
+    print('В Мае 31 день')
+elif month == 6:
+    print('В Июне 30 дней')
+elif month == 7:
+    print('В Июле 31 день')
+elif month == 8:
+    print('В Августе 31 день')
+elif month == 9:
+    print('В Сентябре 30 дней')
+elif month == 10:
+    print('В Октябре 31 день')
+elif month == 11:
+    print('В Ноябре 30 дней')
+elif month == 12:
+    print('В Декабре 31 день')
+else:
+    print('Вы не правильно ввели номер месяца, например - "1"')
