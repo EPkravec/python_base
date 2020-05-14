@@ -23,11 +23,10 @@ envelop_x, envelop_y = 10, 7
 
 if envelop_x >= paper_x and envelop_y >= paper_y:
     print('ДА')
+elif envelop_x >= paper_y and envelop_y >= paper_x:
+    print('ДА')
 else:
-    if envelop_x >= paper_y and envelop_y >= paper_x:
-        print('ДА')
-    else:
-        print('НЕТ')
+    print('НЕТ')
 
 
 
