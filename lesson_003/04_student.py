@@ -22,4 +22,15 @@ expenses_9 = expenses + expenses_8 * 0.03
 total_expenses = expenses + expenses_1 + expenses_2 + expenses_3 + expenses_4 + expenses_5 + expenses_6 + expenses_7 + expenses_8 + expenses_9
 total_education = educational_grant * 10
 money = total_expenses - total_education
-print('Студенту надо поросить', round(money,2), 'рублей')
+print('1 вариант для понимания процесса')
+print('Студенту надо попросить', int(money), 'рублей')
+
+print('2 вариант для цикла')
+procent = 0.03
+i = 1
+while i < 10:
+    i += 1
+    if i in range(11):
+        rasxod = expenses - educational_grant
+        money_1 = int(i * rasxod + rasxod * procent)
+        print('Студенту надо попросить', money_1, 'рублей')
