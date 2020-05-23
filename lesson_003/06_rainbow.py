@@ -2,13 +2,14 @@
 
 # (цикл for)
 
+# 1 задание
 import simple_draw as sd
 
 sd.resolution = (1200, 600)
 sd.background_color = (255, 255, 255)
-sd.caption = 'Радуга дуга 1 и 2 варианты'
+sd.caption = 'Радуга дуга 1 и 2 задание'
 rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
-                      sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
+                  sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
 
 x, y = 50, 50
 x1, y1 = 350, 450
@@ -24,14 +25,22 @@ for x in range(50, rang_start, 9):
     i += 1
     sd.line(start_point=start_point, end_point=end_point, color=colors, width=4)
 
-# Нарисовать радугу: 7 линий разного цвета толщиной 4 с шагом 5 из точки (50, 50) в точку (350, 450)
-# TODO здесь ваш код
-# Подсказка: цикл нужно делать сразу по тьюплу с цветами радуги.
+sd.sleep(3)
+# 2 задание
+sd.clear_screen()
 
+x, y = 680, -250
+center = sd.get_point(x, y)
+radius = 600
+steep = 20
+width = 20
+i = 0
+max_range = radius + width + (width + steep) * 6 + 1
+for radius in range(radius, max_range, steep):
+    colors = rainbow_colors[i]
+    i += 1
+    sd.circle(center_position=center, radius=radius, color=colors, width=width)
 
-# Усложненное задание, делать по желанию.
-# Нарисовать радугу дугами от окружности (cсм sd.circle) за нижним краем экрана,
-# поэкспериментировать с параметрами, что бы было красиво
-# TODO здесь ваш код
+# TODo не могу понять почему в 2 задании выдает ошибку а в первом нет? :(
 
 sd.pause()
