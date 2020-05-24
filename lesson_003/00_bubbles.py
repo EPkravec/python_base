@@ -7,6 +7,8 @@ sd.resolution = (1200, 600)
 sd.background_color = (255, 0, 0)
 sd.caption = 'circle lesson № 3'
 
+#  1 задание
+
 point = sd.get_point(100, 100)
 radius = 50
 color = sd.COLOR_BLACK
@@ -14,7 +16,11 @@ for _ in range(3):
     radius += 5
     sd.circle(center_position=point, radius=radius, color=color)
 
-# Написать функцию рисования пузырька, принммающую 3 (или более) параметра: точка рисования, шаг и цвет
+sd.sleep(3)
+
+# 2 задание
+sd.clear_screen()
+
 def bublle (point, step):
     radius = 50
     color = sd.COLOR_BLUE
@@ -25,15 +31,15 @@ def bublle (point, step):
 point = sd.get_point(100, 100)
 bublle(point=point, step=10)
 
-# Нарисовать 10 пузырьков в ряд
-# Нарисовать три ряда по 10 пузырьков
 for y in range(100, 601, 200):
     for x in range(100, 1201, 120):
         point = sd.get_point(x, y)
         bublle(point=point, step=10)
 
+sd.sleep(3)
 
-# Нарисовать 100 пузырьков в произвольных местах экрана случайными цветами
+# 3 задание
+sd.clear_screen()
 
 for _ in range(100):
     step_1 = random.randint(1, 10)
