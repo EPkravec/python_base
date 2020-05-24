@@ -29,8 +29,6 @@ sd.sleep(3)
 # 2 задание
 sd.clear_screen()
 
-rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
-                  sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
 x, y = 680, -250
 center = sd.get_point(x, y)
 radius = 600
