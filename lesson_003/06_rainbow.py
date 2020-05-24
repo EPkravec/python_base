@@ -29,6 +29,8 @@ sd.sleep(3)
 # 2 задание
 sd.clear_screen()
 
+rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
+                  sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
 x, y = 680, -250
 center = sd.get_point(x, y)
 radius = 600
@@ -40,7 +42,7 @@ for radius in range(radius, max_range, steep):
     colors = rainbow_colors[i]
     i += 1
     sd.circle(center_position=center, radius=radius, color=colors, width=width)
-
+    print(i)
 # TODo не могу понять почему в 2 задании выдает ошибку а в первом нет? :(
 
 sd.pause()
