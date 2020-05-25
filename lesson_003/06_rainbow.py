@@ -10,13 +10,17 @@ sd.background_color = (255, 255, 255)
 sd.caption = 'Радуга дуга 1 и 2 задание'
 rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
                   sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
-
+# TODO нейминг, можно назвать старт_поинт, енд_поинт...
 x, y = 50, 50
 x1, y1 = 350, 450
 step = (5 + 4) * 6 + 1
 rang_start = x + step
 i = 0
 for x in range(50, rang_start, 9):
+    # TODO помести 9-ку в переменную, тем более,
+    #  что 2 раза используешь, и также её можно
+    #  использовать как width в sd.line(). Если надо
+    #  будет изменить этот шаг, то придется менять во всех местах
     x += 9
     x1 += 9
     start_point = sd.get_point(x, y)

@@ -49,3 +49,5 @@ for _ in range(100):
     sd.circle(center_position=point, radius=radius, color=color, width=2)
 
 sd.pause()
+
+# зачет!

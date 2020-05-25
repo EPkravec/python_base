@@ -48,6 +48,8 @@ store = {
 
 for cargo, code in goods.items():
     for quantity, price in store.items():
+        # TODO отлично, только тебе надо теперь тут накапливать кол-во и стоимость, переменные,
+        #  в которые будешь накапливать объяви между циклами
         print(cargo, '-', quantity, 'шт, стоимость', price, 'руб')
 
 
