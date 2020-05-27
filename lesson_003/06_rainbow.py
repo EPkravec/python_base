@@ -10,17 +10,20 @@ sd.background_color = (255, 255, 255)
 sd.caption = 'Радуга дуга 1 и 2 задание'
 rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
                   sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
-# TODO нейминг, можно назвать старт_поинт, енд_поинт...
-x, y = 50, 50
-x1, y1 = 350, 450
+
+start_point_x, start_point_y = x, y = 50, 50
+end_point_x, end_point_y = x1, y1 = 350, 450
 step = (5 + 4) * 6 + 1
 rang_start = x + step
 i = 0
 for x in range(50, rang_start, 9):
-    # TODO помести 9-ку в переменную, тем более,
+    #  помести 9-ку в переменную, тем более,
     #  что 2 раза используешь, и также её можно
     #  использовать как width в sd.line(). Если надо
     #  будет изменить этот шаг, то придется менять во всех местах
+
+
+    # todo  так в том то и дело что в 1 задании все работает а во втором нет !!!!!!!!!!!!!! <<<<<<<<<<<<<<<<<<<<<<<<
     x += 9
     x1 += 9
     start_point = sd.get_point(x, y)
@@ -45,6 +48,5 @@ for radius in range(radius, max_range, steep):
     i += 1
     sd.circle(center_position=center, radius=radius, color=colors, width=width)
     print(i)
-# TODo не могу понять почему в 2 задании выдает ошибку а в первом нет? :(
 
 sd.pause()
