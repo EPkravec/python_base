@@ -47,10 +47,17 @@ store = {
 # Алгоритм должен получиться приблизительно такой:
 
 for cargo, code in goods.items():
+    print(cargo, '- номер товара', code)
+    lampa = goods['Лампа']
+    stol = goods['Стол']
+    divan = goods['Диван']
+    styl = goods['Стул']
+
     for quantity, price in store.items():
-        # TODO отлично, только тебе надо теперь тут накапливать кол-во и стоимость, переменные,
-        #  в которые будешь накапливать объяви между циклами
-        print(cargo, '-', quantity, 'шт, стоимость', price, 'руб')
+        total_lampa = lampa
+        print(price)
+    #     # TODO не понимаю как пока это выполнить нужен пример по первому товару хотябы
+    #     print(cargo, '-', quantity, 'шт, стоимость', price, 'руб')
 
 
 # цикл for по товарам с получением кода и названия товара
