@@ -47,18 +47,21 @@ store = {
 # Алгоритм должен получиться приблизительно такой:
 
 for cargo, code in goods.items():
-    print(cargo, '- номер товара', code)
-    lampa = goods['Лампа']
-    stol = goods['Стол']
-    divan = goods['Диван']
-    styl = goods['Стул']
+    # print(cargo, '- номер товара', code)
+    # TODO тут не надо объявлять эти товары отдельно, ты же по ним итерируешься
+    # lampa = goods['Лампа']
+    # stol = goods['Стол']
+    # divan = goods['Диван']
+    # styl = goods['Стул']
 
-    for quantity, price in store.items():
-        total_lampa = lampa
-        print(price)
+    for st in store[code]:
+        print(st) # TODO вот тут посмотри, выводится инфа по одному товару
+        # total_lampa = lampa
+        # print(price)
     #     # TODO не понимаю как пока это выполнить нужен пример по первому товару хотябы
     #     print(cargo, '-', quantity, 'шт, стоимость', price, 'руб')
-
+    # TODO тут разделение, чтобы было наглядно.
+    print('***********')
 
 # цикл for по товарам с получением кода и названия товара
 #     инициализация переменных для подсчета количества и стоимости товара

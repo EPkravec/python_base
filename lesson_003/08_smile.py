@@ -20,6 +20,7 @@ radius__okko_right = 5
 sd.circle(center_position=coordinat_okko_right, radius=radius__okko_right)
 
 my_list = [335, 330, 365, 330]
+# TODO my_list - должен быть список точек, points
 sd.lines(point_list=my_list)
 
 # Написать функцию отрисовки смайлика по заданным координатам
