@@ -15,7 +15,7 @@ step = (5 + 4) * 6 + 1
 rang_start = x + step
 stip = 9     # сумма толщины линии и растояния между линиями
 i = 0
-# TODO итерируйся по rainbow_colors, тогда не надо будет использовать индекс i
+
 for x in range(50, rang_start, stip):
     x += stip
     x1 += stip
@@ -38,10 +38,13 @@ steep = 20
 width = 20
 i = -1
 max_range = radius + steep * 7
-# TODO тут тоже итерируйся по цветам
+
 for radius in range(radius, max_range, steep):
     i += 1
     colors = rainbow_colors[i]
     sd.circle(center_position=center, radius=radius, color=colors, width=width)
 
 sd.pause()
+
+#не понятно про итерации вчем собстно не так если программа работает и моя ощибка была в точ то я не ту переменую
+# считал. сейчас все работает.
