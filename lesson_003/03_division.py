@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
-
 a, b = 179, 37
-# TODO нейминг, назови переменную как-то count_...
-i = 0
-# TODO делай через while, а что если i 12 раз влезет в а
-for i in range(10):
-    if a == b * i + 31:
-        print('Целочисленное деление', a, 'на', b, 'дает', i)
+number_of_repetitions = 0
+while number_of_repetitions in range(a):
+    number_of_repetitions += 1
+    if a == b * number_of_repetitions + 31:
+        print('Целочисленное деление', a, 'на', b, 'дает', number_of_repetitions)
+
