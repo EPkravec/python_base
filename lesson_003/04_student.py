@@ -10,10 +10,10 @@ months_school = 10
 annual_educational_grant = educational_grant * months_school
 
 for months_with_interest in range(10):
-    # TODO лучше накапливай траты за текущий месяц в общие траты за учебный год и из него вычти стипендию за уч. год.
     percentage_of_expenses = expenses + (expenses + expenses * procent) * months_with_interest
     need_money = percentage_of_expenses - annual_educational_grant
-    # TODO принт надо вынести за цикл, то есть после него.
-    print('Студенту надо попросить', int(need_money), 'рублей')
 
-# todo как сделать что бы в run не высвечивало подсчет с каждого цикла а сразу написало ответ?
+
+print('Студенту надо попросить', int(need_money), 'рублей')
+
+
