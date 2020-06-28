@@ -2,8 +2,11 @@
 
 a, b = 179, 37
 number_of_repetitions = 0
+# TODO тут надо сделать условие типа, если number_of_repetitions*b < а
 while number_of_repetitions in range(a):
     number_of_repetitions += 1
+    # TODO тут надо сделать условие другое, если я изменю а, то у тебя отработает неправильно,
+    #  Вы 31 получили на калькуляторе, а надо сделать алгоритм такой, чтобы он был устойчивый.
     if a == b * number_of_repetitions + 31:
         break
 print('Целочисленное деление', a, 'на', b, 'дает', number_of_repetitions)

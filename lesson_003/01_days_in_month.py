@@ -7,7 +7,7 @@ month = int(user_input)
 box_month_28 = (2,)
 box_month_30 = (4, 6, 9, 11)
 box_month_31 = (1, 3, 5, 7, 8, 10, 12)
-
+# TODO тут надо делать такие проверки, и их будет только 3 if month in box_month_28: ... и ещё 2 проверки для 30 и 31 дней.
 if month == box_month_28[0]:
     print('В феврале 28 дней')
 elif month == box_month_31[0]:
