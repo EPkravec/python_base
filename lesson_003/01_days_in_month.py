@@ -3,34 +3,34 @@
 
 user_input = input("Введите, пожалуйста, номер месяца: ")
 month = int(user_input)
-# TODO, нет туплы, а не словари, туплы с номерами месяцев. box_month_28 = (2, )
-box_month_28 = {2: 28}
-box_month_30 = {4: 30, 6: 30, 9: 30, 11: 30}
-box_month_31 = {1: 31, 3: 31, 5: 31, 7: 31, 8: 31, 10: 31, 12: 31}
-# TODO а тут делай проверку, если введенное число in box_month_28, то 28 дней и тд.
-if month == 1:
-    print('В январе', box_month_31[month], 'день')
-elif month == 2:
-    print('В феврале', box_month_28[month], 'дней')
-elif month == 3:
-    print('В марте', box_month_31[month], 'день')
-elif month == 4:
-    print('В апреле', box_month_30[month], 'дней')
-elif month == 5:
-    print('В мае', box_month_31[month], 'день')
-elif month == 6:
-    print('В июнее', box_month_30[month], 'дней')
-elif month == 7:
-    print('В июле', box_month_31[month], 'день')
-elif month == 8:
-    print('В августе', box_month_31[month], 'день')
-elif month == 9:
-    print('В сентябре', box_month_30[month], 'дней')
-elif month == 10:
-    print('В октябре', box_month_31[month], 'день')
-elif month == 11:
-    print('В ноябре', box_month_30[month], 'дней')
-elif month == 12:
-    print('В декабре', box_month_31[month], 'день')
+
+box_month_28 = (2,)
+box_month_30 = (4, 6, 9, 11)
+box_month_31 = (1, 3, 5, 7, 8, 10, 12)
+
+if month == box_month_28[0]:
+    print('В феврале 28 дней')
+elif month == box_month_31[0]:
+    print('В январе 31 день')
+elif month == box_month_31[1]:
+    print('В марте 31 день')
+elif month == box_month_31[2]:
+    print('В мае 31 день')
+elif month == box_month_31[3]:
+    print('В июле 31 день')
+elif month == box_month_31[4]:
+    print('В августе 31 день')
+elif month == box_month_31[5]:
+    print('В октябре 31 день')
+elif month == box_month_31[6]:
+    print('В декабре 31 день')
+elif month == box_month_30[0]:
+    print('В апреле 30 дней')
+elif month == box_month_30[1]:
+    print('В июне 30 дней')
+elif month == box_month_30[2]:
+    print('В сентябре 30 дней')
+elif month == box_month_30[3]:
+    print('В ноябре 30 дней')
 else:
-    print('Вы не правильно ввели номер месяца, нужно ввести значение от 1 до 12')
+    print('Вы не правильно ввели номер месяца')
