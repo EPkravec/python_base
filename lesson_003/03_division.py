@@ -2,15 +2,11 @@
 
 a, b = 179, 37
 number_of_repetitions = 0
-# TODO тут надо сделать условие типа, если number_of_repetitions*b < а
-while number_of_repetitions in range(a):
+# TODO не знаю какое условие поставить. Если только меньше А, делает 5 циклов это больше нужного,
+#  не пойму пока какое условие поставить или как написаный  правильно аргументировать
+while number_of_repetitions * b < a - b:
+    remainder_of_integer_division = a - b * number_of_repetitions
     number_of_repetitions += 1
-    # TODO тут надо сделать условие другое, если я изменю а, то у тебя отработает неправильно,
-    #  Вы 31 получили на калькуляторе, а надо сделать алгоритм такой, чтобы он был устойчивый.
-    if a == b * number_of_repetitions + 31:
+    if a == b * number_of_repetitions + remainder_of_integer_division:
         break
 print('Целочисленное деление', a, 'на', b, 'дает', number_of_repetitions)
-
-# todo  я не пойму чего Вам надо, ранее обращаливнимание на это а сейчас что то не понравилось !.
-# todo  если программа работает правильно прошу, писать об щибке стилистика или непонятно, допиши коменты  а то я
-# todo  а я уже не знаю что тут браться
