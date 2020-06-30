@@ -19,8 +19,9 @@ coordinat_okko_right = sd.get_point(365, 360)
 radius__okko_right = 5
 sd.circle(center_position=coordinat_okko_right, radius=radius__okko_right)
 
-my_list = [335, 330, 365, 330]
+my_list = [335, 330]
 # TODO my_list - должен быть список точек, points
+# todo  не могу понять каким образом записываються коокдинаты для lines в списке
 sd.lines(point_list=my_list)
 
 # Написать функцию отрисовки смайлика по заданным координатам
