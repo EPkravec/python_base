@@ -7,30 +7,24 @@ month = int(user_input)
 box_month_28 = (2,)
 box_month_30 = (4, 6, 9, 11)
 box_month_31 = (1, 3, 5, 7, 8, 10, 12)
-# TODO тут надо делать такие проверки, и их будет только 3 if month in box_month_28: ... и ещё 2 проверки для 30 и 31 дней.
-if month == box_month_28[0]:
-    print('В феврале 28 дней')
-elif month == box_month_31[0]:
-    print('В январе 31 день')
-elif month == box_month_31[1]:
-    print('В марте 31 день')
-elif month == box_month_31[2]:
-    print('В мае 31 день')
-elif month == box_month_31[3]:
-    print('В июле 31 день')
-elif month == box_month_31[4]:
-    print('В августе 31 день')
-elif month == box_month_31[5]:
-    print('В октябре 31 день')
-elif month == box_month_31[6]:
-    print('В декабре 31 день')
-elif month == box_month_30[0]:
-    print('В апреле 30 дней')
-elif month == box_month_30[1]:
-    print('В июне 30 дней')
-elif month == box_month_30[2]:
-    print('В сентябре 30 дней')
-elif month == box_month_30[3]:
-    print('В ноябре 30 дней')
+box_month_name = {1: 'Январе',
+                  2: 'Феврале',
+                  3: 'Марте',
+                  4: 'Апреле',
+                  5: 'Мае',
+                  6: 'Июне',
+                  7: 'Июле',
+                  8: 'Августе',
+                  9: 'Сентябре',
+                  10: 'Октябре',
+                  11: 'Ноябре',
+                  12: 'Декабре',
+                  }
+if month in box_month_28:
+    print('В', box_month_name[month], '28 дней')
+elif month in box_month_30:
+    print('В', box_month_name[month], '30 день')
+elif month in box_month_31:
+    print('В', box_month_name[month], '31 день')
 else:
     print('Вы не правильно ввели номер месяца')
