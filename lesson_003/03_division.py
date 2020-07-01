@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 
 a, b = 179, 37
-# TODO тут ты можешь а закинуть в переменную, и в цикле её наращивать, и когда она станет больше b, то сделать break
-number_of_repetitions = 0
-# TODO не знаю какое условие поставить. Если только меньше А, делает 5 циклов это больше нужного,
-#  не пойму пока какое условие поставить или как написаный  правильно аргументировать
-while number_of_repetitions * b < a - b:
+number_of_repetitions = 1
+while a > b * number_of_repetitions + b:
     remainder_of_integer_division = a - b * number_of_repetitions
     number_of_repetitions += 1
     if a == b * number_of_repetitions + remainder_of_integer_division:
