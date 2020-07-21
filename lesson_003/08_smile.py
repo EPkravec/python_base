@@ -18,16 +18,23 @@ sd.circle(center_position=coordinat_okko_left, radius=radius__okko_left)
 coordinat_okko_right = sd.get_point(365, 360)
 radius__okko_right = 5
 sd.circle(center_position=coordinat_okko_right, radius=radius__okko_right)
-# TODO вот надо класть именно поинты, а не инты.
-my_list = [sd.get_point(365, 360), sd.get_point(500, 500)]
-# TODO my_list - должен быть список точек, points
-# todo  не могу понять каким образом записываються коокдинаты для lines в списке
-sd.lines(point_list=my_list)
 
-# Написать функцию отрисовки смайлика по заданным координатам
-# Форма рожицы-смайлика на ваше усмотрение
-# Параметры функции: кордината X, координата Y, цвет.
-# Вывести 10 смайликов в произвольных точках экрана.
-# TODO здесь ваш код
+my_list_right_cheek = [sd.get_point(375, 340), sd.get_point(360, 330)]
+sd.lines(point_list=my_list_right_cheek)
 
+my_list_left_cheek = [sd.get_point(325, 340), sd.get_point(340, 330)]
+sd.lines(point_list=my_list_left_cheek)
+
+my_list_center_cheek = [sd.get_point(360, 330), sd.get_point(340, 330)]
+sd.lines(point_list=my_list_center_cheek)
+
+sd.sleep(3)
+sd.clear_screen()  # 10 смайликов рандомно
+
+
+def smail(coordinat_face, coordinat_okko_left, coordinat_okko_right, my_list_right_cheek, my_list_left_cheek,
+          my_list_center_cheek):
+
+# todo дальше пока не пойму, что нужно сделать и как цикл будет производить привязку всех частей смайла, или как
+#  их сгруппировать в один смайл, что бы можно было циклить его, а не его составные части.
 sd.pause()
