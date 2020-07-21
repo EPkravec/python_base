@@ -9,6 +9,8 @@ sd.caption = 'Стена'
 start_left_point_x, start_left_point_y = x, y, = 0, 0
 end_right_point_x, end_right_point_y = x1, y1 = 100, 50
 
+
+
 for x in range(-101, 700, 100):
     x += 100
     x1 += 100
