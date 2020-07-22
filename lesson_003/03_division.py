@@ -8,3 +8,5 @@ while a > b * number_of_repetitions + b:
     if a == b * number_of_repetitions + remainder_of_integer_division:
         break
 print('Целочисленное деление', a, 'на', b, 'дает', number_of_repetitions)
+
+# зачет!

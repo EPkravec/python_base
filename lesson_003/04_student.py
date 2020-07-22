@@ -12,3 +12,5 @@ for _ in range(months_with_interest):
     expenses = expenses + expenses_one_month
     need_money = expenses - educational_grant * total_months
 print('Студенту надо попросить', int(need_money), 'рублей')
+
+# зачет!
