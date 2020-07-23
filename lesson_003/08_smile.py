@@ -39,6 +39,7 @@ def smail(point):
     radius__okko_left = 5
 
     radius__okko_right = 5
+    # TODO в консоли же написано NameError: name 'x' is not defined. х используешь, но не определил?
     coordinat_okko_left = sd.get_point(x - 15, y + 10)
     coordinat_okko_right = sd.get_point(x + 15, y + 10)
     my_list_right_cheek = [sd.get_point(x + 25, y - 10), sd.get_point(x + 10, y - 20)]
