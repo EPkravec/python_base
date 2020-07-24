@@ -31,7 +31,7 @@ sd.lines(point_list=my_list_center_cheek)
 sd.sleep(3)
 sd.clear_screen()  # 10 смайликов рандомно
 
-
+# TODO принимаешь point, но не используешь?
 def smail(point):
     radius_face = 40
     x = sd.random_number(100, 500)
@@ -65,3 +65,4 @@ for _ in range(10):
 
 sd.pause()
 # todo  чет не так %) лишние появились :)
+# TODO сделай ф-ию, которая будет отрисовывать 1 смайл, и на вход будет принимать координаты.

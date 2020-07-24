@@ -34,3 +34,5 @@ for cargo, code in goods.items():
         price += st['quantity'] * st['price']
 
     print(cargo, '-', quantity, 'шт, стоимость', price, "руб")
+
+# зачет!

@@ -22,13 +22,12 @@ for y in range(0, 700, 50):
         x1 += 100
         y += 50
         y1 += 50
-        # TODO тут наверное надо range дулать от вычисленного х или shift.
-        #  Также по моему этот цикл должен быть смещен влево на один таб
+        # TODO тут наверное надо range делать от вычисленного х или shift.
     for x in range(0, 700, 100):
         left_point = sd.get_point(x, y)
+        # TODO тут скорее не x1, а x + 100
         right_point = sd.get_point(x1, y1)
+        print(left_point, right_point) # TODO вот я распринтил точки, посмотри, мб наведут на мысль.
         sd.rectangle(left_bottom=left_point, right_top=right_point, width=1)
 sd.pause()
 
-# TODO  ПОЛУЧАЕТЬСЯ НО ПРОРИСОВКА НЕ ДОКОНЦА ЭТО НАВЕРНО ПО ПРИЧИНЕ того что по у сделал сдвиг по Х
-#  как сделать х ?
