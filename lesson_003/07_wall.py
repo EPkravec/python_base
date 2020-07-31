@@ -12,22 +12,25 @@ x_shift, y_shift, = -50, 50
 x1_shift, y1_shift = 50, 100
 
 for y in range(0, 700, 50):
-    if (y / 50) % 2 == 0 in range(50):
-        x = x_shift
-        x1 = x1_shift
-        y += 50
-        y1 += 50
-    elif (y / 50) % 2 == 1 in range(50):
-        x += 100
-        x1 += 100
-        y += 50
-        y1 += 50
-        # TODO тут наверное надо range делать от вычисленного х или shift.
-    for x in range(0, 700, 100):
-        left_point = sd.get_point(x, y)
-        # TODO тут скорее не x1, а x + 100
-        right_point = sd.get_point(x1, y1)оооо
-        print(left_point, right_point) # TODO вот я распринтил точки, посмотри, мб наведут на мысль.рр
-        sd.rectangle(left_bottom=left_point, right_top=right_point, width=1)
+    if (y / 50) % 2 == 1:
+        for x in range(0, 700, 100):
+            left_point = sd.get_point(x_shift, y_shift)
+            right_point = sd.get_point(x1_shift, y1_shift)
+            x_shift = -50
+            x1_shift = 50
+            y_shift += 100
+            y1_shift += 100
+            sd.rectangle(left_bottom=left_point, right_top=right_point, width=1)
+    if (y / 50) % 2 == 0:
+        for x in range(0, 700, 100):
+            left_point = sd.get_point(x, y)
+            right_point = sd.get_point(x1, y1)
+            x = 0
+            x1 = 100
+            y = 0
+            y1 += 50
+            sd.rectangle(left_bottom=left_point, right_top=right_point, width=1)
+
 sd.pause()
 
+# todo вот что то более менее получаеться но  не могу понять пока что именно нужно с координатами делать
