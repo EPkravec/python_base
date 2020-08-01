@@ -20,6 +20,7 @@ for y in range(0, 700, 50):
             x1_shift = 50
             y_shift += 100
             y1_shift += 100
+            print(left_point, right_point)
             sd.rectangle(left_bottom=left_point, right_top=right_point, width=1)
     if (y / 50) % 2 == 0:
         for x in range(0, 700, 100):
@@ -29,8 +30,10 @@ for y in range(0, 700, 50):
             x1 = 100
             y = 0
             y1 += 50
+            print(left_point, right_point)
             sd.rectangle(left_bottom=left_point, right_top=right_point, width=1)
 
 sd.pause()
 
 # todo вот что то более менее получаеться но  не могу понять пока что именно нужно с координатами делать
+#  Я принты поставил, мб натолкнет на мысль, посмотри, если не получится помогу

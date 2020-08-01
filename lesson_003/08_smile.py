@@ -30,3 +30,5 @@ for _ in range(10):
     smail(x=x, y=y)
 
 sd.pause()
+
+# зачет!
