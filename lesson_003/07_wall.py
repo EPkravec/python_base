@@ -19,5 +19,6 @@ for y in range(0, 700, 50):
         for x in range(0, 700, 100):
             left_point = sd.get_point(x + shift, y)
             right_point = sd.get_point(x + 100 + shift, y + 50)
+            print(x,y)
             sd.rectangle(left_bottom=left_point, right_top=right_point, width=1)
 sd.pause()
