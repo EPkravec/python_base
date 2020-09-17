@@ -6,6 +6,8 @@ sd.resolution = (1000, 700)
 
 
 def triangle(point, angle, length):
+    # TODO вот тут повторяющиеся строки, их лучше сделать в цикле, потом будет проще сделать одну общую ф-ию.
+    #  Можешь вторую часть начинать делать сразу.
     v1 = sd.get_vector(start_point=point, angle=angle, length=length)
     v1.draw()
     v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 120, length=length)
@@ -13,7 +15,7 @@ def triangle(point, angle, length):
     v3 = sd.get_vector(start_point=v2.end_point, angle=angle + 240, length=length)
     v3.draw()
 
-
+# TODO все ф-ии должны быть вверху, потом код, который их использует.
 point_triangle = sd.get_point(100, 50)
 angle_triangle = 30
 length_triangle = 100
