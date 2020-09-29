@@ -1,14 +1,31 @@
 # -*- coding: utf-8 -*-
 
 import simple_draw as sd
+import random
 
+sd.resolution = (1200, 600)
 
 # На основе кода из практической части реализовать снегопад:
 # - создать списки данных для отрисовки N снежинок
 # - нарисовать падение этих N снежинок
 # - создать список рандомных длин лучей снежинок (от 10 до 100) и пусть все снежинки будут разные
+#
+#
+# for _ in range(20):
+#     x = random.randint(10, 1150)
+#     length = random.randint(10, 60)
+#     point_0 = sd.get_point(x, 550)
+#     sd.snowflake(center=point_0, length=length)
 
-N = 20
+# y = random.random()
+# N = 20
+#
+# def snoy (center, length):
+#     length_all = length * .75
+
+#
+# point_0 = sd.get_point(x, 550)
+# sd.snowflake(center=point_0, length=50)
 
 # Пригодятся функции
 # sd.get_point()
@@ -17,11 +34,24 @@ N = 20
 # sd.random_number()
 # sd.user_want_exit()
 
+#
+# x = 100
+# y = 550
+#
+# x2 = 150
+# y2 = 450
+x = [100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 125, 175, 225, 275, 325, 375, 425, 475, 525, 575]
+y = [550, 540, 530, 540, 550, 560, 545, 530, 500, 560, 550, 540, 530, 540, 550, 560, 545, 530, 500, 560]
 
 while True:
     sd.clear_screen()
-    # TODO здесь ваш код
-    sd.sleep(0.1)
+    for i in range(len(x)):
+        point = sd.get_point(x[i], y[i])
+        sd.snowflake(center=point, length=10)
+        y[i] -= 20
+        if y[i] < 20:
+            break
+        sd.sleep(0.1)
     if sd.user_want_exit():
         break
 sd.pause()
