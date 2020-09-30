@@ -53,7 +53,6 @@ draw_branches(point=root_point, angle=angle, length=length)
 
 # можно поиграть -шрифтами- цветами и углами отклонения
 
-# TODO здесь ваш код
 
 # 4) Усложненное задание (делать по желанию)
 # - сделать рандомное отклонение угла ветвей в пределах 40% от 30-ти градусов
@@ -64,3 +63,5 @@ draw_branches(point=root_point, angle=angle, length=length)
 # sd.random_number()
 
 sd.pause()
+
+# зачет!
