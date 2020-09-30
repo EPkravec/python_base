@@ -12,6 +12,7 @@ def triangle(point, angle, length, delta):
     v1.draw()
     next_angle_triangle = angle + delta_triangle
     next_point = v1.end_point
+    # TODO сделай пожалуйста в цикле, использовать рекурсию, где в этом нет особой необходимости - не надо, как минимум усложняет чтение кода.
     triangle(point=next_point, angle=next_angle_triangle, length=length, delta=delta)
 
 
