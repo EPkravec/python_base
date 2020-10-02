@@ -2,6 +2,7 @@
 import simple_draw as sd
 
 sd.resolution = (1000, 700)
+# TODO мб ещё подумать над структурой, например словарь, с котором ключ - номер, а значение другой словарь, в котором будет храниться код цвета и название цвета.
 color_selection = ['0 : red', '1 : orange', '2 : yellow', '3 : green', '4 : cyan', '5 : blue', '6 : purple']
 
 print('Возможные цвета:', sep='\n', *color_selection)
@@ -23,7 +24,7 @@ elif user_data == 6:
 else:
     print('Вы ввели не корректный номер')
 
-
+# TODO после изменений в первом задании перенеси код сюда. Также по кодингстайлу сначала идут функции, а потом основной код.
 def triangle(point, angle, length):
     v1 = sd.get_vector(start_point=point, angle=angle, length=length)
     v1.draw(color=color)

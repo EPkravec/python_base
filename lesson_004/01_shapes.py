@@ -4,7 +4,7 @@ import simple_draw as sd
 
 sd.resolution = (600, 600)
 
-
+# TODO отлично, теперь тебе надо сделать одну базовую ф-ию, а эти все ф-ии должны в будут её вызывать с нужными параметрами.
 def triangle(point, angle, length):
     v1 = sd.get_vector(start_point=point, angle=angle, length=length)
     v1.draw()
