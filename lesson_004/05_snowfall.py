@@ -45,14 +45,13 @@ y = [550, 540, 530, 540, 550, 560, 545, 530, 500, 560, 550, 540, 530, 540, 550, 
 
 while True:
     sd.clear_screen()
-    for i in range(len(x)): # TODO если итерируешься по списку, то лучше не по его длине, а все-таки по списку. Чтобы получить сразу индекс, пригодится ф-ия enumerate 
-    # TODO вот так  -  for idx, val in enumerate(x): ...
-        point = sd.get_point(x[i], y[i])
+    for idx, val in enumerate(x):
+        point = sd.get_point(x[idx], y[idx])
         sd.snowflake(center=point, length=10)
-        y[i] -= 20
-        if y[i] < 20:
+        y[idx] -= 20
+        if y[idx] < 20:
             break
-        sd.sleep(0.1) # TODO зачем слип после отрисовки каждой снежинки? Надо после отрисовки всех снежинок
+    sd.sleep(0.1)
     if sd.user_want_exit():
         break
 sd.pause()
