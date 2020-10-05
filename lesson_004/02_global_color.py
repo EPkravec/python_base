@@ -1,30 +1,19 @@
 # -*- coding: utf-8 -*-
 import simple_draw as sd
+import random
 
-sd.resolution = (1000, 700)
+sd.resolution = (600, 600)
+
+
 # TODO мб ещё подумать над структурой, например словарь, с котором ключ - номер, а значение другой словарь, в котором будет храниться код цвета и название цвета.
-color_selection = ['0 : red', '1 : orange', '2 : yellow', '3 : green', '4 : cyan', '5 : blue', '6 : purple']
 
-print('Возможные цвета:', sep='\n', *color_selection)
-user_data = int(input('Введите желаемый цвет > '))
-if user_data == 0:
-    color = sd.COLOR_RED
-elif user_data == 1:
-    color = sd.COLOR_ORANGE
-elif user_data == 2:
-    color = sd.COLOR_YELLOW
-elif user_data == 3:
-    color = sd.COLOR_GREEN
-elif user_data == 4:
-    color = sd.COLOR_CYAN
-elif user_data == 5:
-    color = sd.COLOR_BLUE
-elif user_data == 6:
-    color = sd.COLOR_PURPLE
-else:
-    print('Вы ввели не корректный номер')
+def figur(point, angle, length):
+    triangle(point=point_triangle, angle=angle, length=length)
+    square(point=point_square, angle=angle, length=length)
+    pentagon(point=point_pentagon, angle=angle, length=length)
+    hexagon(point=point_hexagon, angle=angle, length=length)
 
-# TODO после изменений в первом задании перенеси код сюда. Также по кодингстайлу сначала идут функции, а потом основной код.
+
 def triangle(point, angle, length):
     v1 = sd.get_vector(start_point=point, angle=angle, length=length)
     v1.draw(color=color)
@@ -71,14 +60,45 @@ delta_triangle = 120
 delta_square = 90
 delta_pentagon = 72
 delta_hexagon = 60
-point_triangle = sd.get_point(100, 50)
-point_square = sd.get_point(400, 50)
-point_pentagon = sd.get_point(400, 400)
-point_hexagon = sd.get_point(100, 400)
+x = random.randint(0, 20)
+y = random.randint(0, 20)
+point_0 = sd.get_point(x, y)
+point_triangle = sd.get_point(x + 100, y + 50)
+point_square = sd.get_point(x + 400, y + 50)
+point_pentagon = sd.get_point(x + 400, y + 400)
+point_hexagon = sd.get_point(x + 100, y + 400)
 
-triangle(point=point_triangle, angle=angle, length=length)
-square(point=point_square, angle=angle, length=length)
-pentagon(point=point_pentagon, angle=angle, length=length)
-hexagon(point=point_hexagon, angle=angle, length=length)
+dict_menu = {
+    0: 'red',
+    1: 'orange',
+    2: 'yellow',
+    3: 'green',
+    4: 'cyan',
+    5: 'blue',
+    6: 'purple'
+}
+dict_menu_color = {
+    'red': sd.COLOR_RED,
+    'orange': sd.COLOR_ORANGE,
+    'yellow': sd.COLOR_YELLOW,
+    'green': sd.COLOR_GREEN,
+    'cyan': sd.COLOR_CYAN,
+    'blue': sd.COLOR_BLUE,
+    'purple': sd.COLOR_PURPLE
+}
+
+for key, it in dict_menu.items():
+    print(key, ':', it)
+
+user_data = int(input('Введите желаемый цвет > '))
+
+for number, color_menu in dict_menu.items():
+    for sd_color in dict_menu_color[color_menu]:
+        if user_data == number:
+            color = dict_menu_color[color_menu]
+            break
+
+
+figur(point=point_0, angle=angle, length=length)
 
 sd.pause()
