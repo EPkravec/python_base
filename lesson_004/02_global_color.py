@@ -93,10 +93,9 @@ for key, it in dict_menu.items():
 user_data = int(input('Введите желаемый цвет > '))
 
 for number, color_menu in dict_menu.items():
-    for sd_color in dict_menu_color[color_menu]:
-        if user_data == number:
-            color = dict_menu_color[color_menu]
-            break
+    if user_data == number:
+        color = dict_menu_color[color_menu]
+        break
 
 
 figur(point=point_0, angle=angle, length=length)

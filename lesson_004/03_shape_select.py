@@ -1,23 +1,6 @@
 # -*- coding: utf-8 -*-
 import simple_draw as sd
 
-sd.resolution = (600, 600)
-# TODO тут аналогично, подумай, как сделать через словарь или словарь словарей.
-color_selection = ['0 : треугольник', '1 : квадрат', '2 : пятиугольник', '3 : шестиугольник']
-
-print('Возможные цвета:', sep='\n', *color_selection)
-user_data = int(input('Введите желаемый цвет > '))
-if user_data == 0:
-    delta = 120
-elif user_data == 1:
-    delta = 90
-elif user_data == 2:
-    delta = 72
-elif user_data == 3:
-    delta = 60
-else:
-    print('Вы ввели не корректный номер')
-
 
 def figur(point, angle, length):
     v1 = sd.get_vector(start_point=point, angle=angle, length=length)
@@ -32,6 +15,25 @@ def figur(point, angle, length):
 angle = 30
 length = 100
 point = sd.get_point(300, 300)
+dict_menu = {
+    0: 'треугольник',
+    1: 'квадрат',
+    2: 'пятиугольник',
+    3: 'шестиугольник'
+}
+dict_menu_figures = {
+    'треугольник': 120,
+    'квадрат': 90,
+    'пятиугольник': 72,
+    'шестиугольник': 60
+}
+for key, it in dict_menu.items():
+    print(key, ':', it)
+user_data = int(input('Введите желаемую фигуру > '))
+for number, figures_menu in dict_menu.items():
+    if user_data == number:
+        delta = dict_menu_figures[figures_menu]
+        break
 
 figur(point=point, angle=angle, length=length)
 
