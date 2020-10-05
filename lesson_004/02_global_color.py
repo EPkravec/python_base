@@ -5,8 +5,6 @@ import random
 sd.resolution = (600, 600)
 
 
-# TODO мб ещё подумать над структурой, например словарь, с котором ключ - номер, а значение другой словарь, в котором будет храниться код цвета и название цвета.
-
 def figur(point, angle, length):
     triangle(point=point_triangle, angle=angle, length=length)
     square(point=point_square, angle=angle, length=length)
@@ -96,7 +94,8 @@ for number, color_menu in dict_menu.items():
     if user_data == number:
         color = dict_menu_color[color_menu]
         break
-
+else:
+    print('Вы ввели не корректный номер')
 
 figur(point=point_0, angle=angle, length=length)
 

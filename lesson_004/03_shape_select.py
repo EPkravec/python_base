@@ -29,11 +29,16 @@ dict_menu_figures = {
 }
 for key, it in dict_menu.items():
     print(key, ':', it)
+
 user_data = int(input('Введите желаемую фигуру > '))
+
 for number, figures_menu in dict_menu.items():
     if user_data == number:
         delta = dict_menu_figures[figures_menu]
         break
+else:
+    print('Вы ввели не корректный номер')
+
 
 figur(point=point, angle=angle, length=length)
 
