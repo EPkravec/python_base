@@ -5,7 +5,7 @@ import random
 
 sd.resolution = (600, 600)
 
-
+# TODO не совсем так), тебе надо сделать базовую ф-ию, выглядеть она будет как triangle, например, а сама triangle внутри будет только одной строкой вызывать юту ф-ию с нужными параметрами, все остальные ф-ии - также)
 def figur(point, angle, length):
     triangle(point=point_triangle, angle=angle, length=length)
     square(point=point_square, angle=angle, length=length)
