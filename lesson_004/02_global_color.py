@@ -92,13 +92,12 @@ user_data = int(input('Введите желаемый цвет > '))
 
 for number, color_menu in dict_menu.items():
     while user_data > 6 or user_data < 0:
+        print('Вы ввели не корректный номер')
         user_data = int(input('Введите желаемый цвет > '))
         break
     if user_data == number:
         color = dict_menu_color[color_menu]
         break
-else:
-    print('Вы ввели не корректный номер')
 
 figur(point=point_0, angle=angle, length=length)
 

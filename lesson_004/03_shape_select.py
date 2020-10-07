@@ -33,12 +33,13 @@ for key, it in dict_menu.items():
 user_data = int(input('Введите желаемую фигуру > '))
 
 for number, figures_menu in dict_menu.items():
+    while user_data > 3 or user_data < 0:
+        print('Вы ввели не корректный номер')
+        user_data = int(input('Введите желаемый цвет > '))
+        break
     if user_data == number:
         delta = dict_menu_figures[figures_menu]
         break
-else:
-    print('Вы ввели не корректный номер')
-
 
 figur(point=point, angle=angle, length=length)
 
