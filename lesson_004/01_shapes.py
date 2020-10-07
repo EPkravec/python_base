@@ -13,6 +13,7 @@ def figur(start_point, angle, length):
         next_angle += angle + delta
         v1 = sd.get_vector(start_point=next_point, angle=next_angle, length=length)
         v1.draw()
+    # TODO у тебя первая точка и последняя - не сходятся, надо их соединить, особенно это видно в многоугольных фигурах
 
 
 def triangle(point, angle, length):

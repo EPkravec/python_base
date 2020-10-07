@@ -4,7 +4,7 @@ import random
 
 sd.resolution = (600, 600)
 
-
+# TODO перенеси сюда эти ф-ии из первого задания, как там поправишь.
 def figur(point, angle, length):
     triangle(point=point_triangle, angle=angle, length=length)
     square(point=point_square, angle=angle, length=length)
@@ -65,7 +65,7 @@ point_triangle = sd.get_point(x + 100, y + 50)
 point_square = sd.get_point(x + 400, y + 50)
 point_pentagon = sd.get_point(x + 400, y + 400)
 point_hexagon = sd.get_point(x + 100, y + 400)
-
+# TODO попробуй объединить dict_menu и dict_menu_color, для этого можно сделать словарь в словаре, чтобы ключ был - цифра, а значение - словарь с цветом и кодом цвета.
 dict_menu = {
     0: 'red',
     1: 'orange',
