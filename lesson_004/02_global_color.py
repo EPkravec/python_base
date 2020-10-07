@@ -89,8 +89,11 @@ for key, it in dict_menu.items():
     print(key, ':', it)
 
 user_data = int(input('Введите желаемый цвет > '))
-# TODO да, вот это лучше реализовать через бесконечный while, чтобы пользователь мог перевыбрать, в третьем задании - также.
+
 for number, color_menu in dict_menu.items():
+    while user_data > 6 or user_data < 0:
+        user_data = int(input('Введите желаемый цвет > '))
+        break
     if user_data == number:
         color = dict_menu_color[color_menu]
         break
