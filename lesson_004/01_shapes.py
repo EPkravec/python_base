@@ -8,12 +8,12 @@ sd.resolution = (600, 600)
 def figur(start_point, angle, length):
     v1 = sd.get_vector(start_point=start_point, angle=angle, length=length)
     v1.draw()
-    for next_angle in range(0, 271, delta):
+    for next_angle in range(0, 181, delta):
         next_point = v1.end_point
         next_angle += angle + delta
         v1 = sd.get_vector(start_point=next_point, angle=next_angle, length=length)
         v1.draw()
-    # TODO у тебя первая точка и последняя - не сходятся, надо их соединить, особенно это видно в многоугольных фигурах
+    sd.line(start_point=v1.end_point, end_point=start_point)
 
 
 def triangle(point, angle, length):
