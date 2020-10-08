@@ -17,30 +17,27 @@ length = 100
 point = sd.get_point(300, 300)
 # TODO тут тоже объедини эти словари, потом будет проще добавлять новые варианты, если будет требоваться
 dict_menu = {
-    0: 'треугольник',
-    1: 'квадрат',
-    2: 'пятиугольник',
-    3: 'шестиугольник'
+    0: {'треугольник': 120},
+    1: {'квадрат': 90},
+    2: {'пятиугольник': 72},
+    3: {'шестиугольник': 60}
 }
-dict_menu_figures = {
-    'треугольник': 120,
-    'квадрат': 90,
-    'пятиугольник': 72,
-    'шестиугольник': 60
-}
+
 for key, it in dict_menu.items():
-    print(key, ':', it)
+    print(key, ':', *it)
 
 user_data = int(input('Введите желаемую фигуру > '))
 
-for number, figures_menu in dict_menu.items():
-    while user_data > 3 or user_data < 0:
-        print('Вы ввели не корректный номер')
-        user_data = int(input('Введите желаемый цвет > '))
-        break
-    if user_data == number:
-        delta = dict_menu_figures[figures_menu]
-        break
+for number, figures_delta in dict_menu.items():
+    for figures_delta_key, delta in figures_delta.items():
+        while user_data > 3 or user_data < 0:
+            print('Вы ввели не корректный номер')
+            user_data = int(input('Введите желаемый цвет > '))
+            break
+        if user_data == number:
+            delta = figures_delta[figures_delta_key]
+            print(type(delta), delta)
+            break
 
 figur(point=point, angle=angle, length=length)
 
