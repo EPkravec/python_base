@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
 import simple_draw as sd
 
-
-def figur(point, angle, length):
-    v1 = sd.get_vector(start_point=point, angle=angle, length=length)
+def figur(start_point, angle, length):
+    v1 = sd.get_vector(start_point=start_point, angle=angle, length=length)
     v1.draw()
-    for next_angle in range(0, 271, delta):
+    if delta < 73:
+        end_range = 181
+    elif delta > 73:
+        end_range = 91
+    for next_angle in range(0, end_range, delta):
         next_point = v1.end_point
         next_angle += angle + delta
         v1 = sd.get_vector(start_point=next_point, angle=next_angle, length=length)
         v1.draw()
-
+    sd.line(start_point=v1.end_point, end_point=start_point)
 
 angle = 30
 length = 100
@@ -36,9 +39,8 @@ for number, figures_delta in dict_menu.items():
             break
         if user_data == number:
             delta = figures_delta[figures_delta_key]
-            print(type(delta), delta)
             break
 
-figur(point=point, angle=angle, length=length)
+figur(start_point=point, angle=angle, length=length)
 
 sd.pause()

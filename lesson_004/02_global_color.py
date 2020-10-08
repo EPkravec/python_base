@@ -7,7 +7,11 @@ sd.resolution = (600, 600)
 def figur(start_point, angle, length):
     v1 = sd.get_vector(start_point=start_point, angle=angle, length=length)
     v1.draw(color=color)
-    for next_angle in range(0, 181, delta):
+    if delta < 73:
+        end_range = 181
+    elif delta > 73:
+        end_range = 91
+    for next_angle in range(0, end_range, delta):
         next_point = v1.end_point
         next_angle += angle + delta
         v1 = sd.get_vector(start_point=next_point, angle=next_angle, length=length)
