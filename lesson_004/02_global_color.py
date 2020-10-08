@@ -4,7 +4,7 @@ import random
 
 sd.resolution = (600, 600)
 
-# TODO перенеси сюда эти ф-ии из первого задания, как там поправишь.
+
 def figur(point, angle, length):
     triangle(point=point_triangle, angle=angle, length=length)
     square(point=point_square, angle=angle, length=length)
@@ -65,39 +65,32 @@ point_triangle = sd.get_point(x + 100, y + 50)
 point_square = sd.get_point(x + 400, y + 50)
 point_pentagon = sd.get_point(x + 400, y + 400)
 point_hexagon = sd.get_point(x + 100, y + 400)
-# TODO попробуй объединить dict_menu и dict_menu_color, для этого можно сделать словарь в словаре, чтобы ключ был - цифра, а значение - словарь с цветом и кодом цвета.
+
 dict_menu = {
-    0: 'red',
-    1: 'orange',
-    2: 'yellow',
-    3: 'green',
-    4: 'cyan',
-    5: 'blue',
-    6: 'purple'
-}
-dict_menu_color = {
-    'red': sd.COLOR_RED,
-    'orange': sd.COLOR_ORANGE,
-    'yellow': sd.COLOR_YELLOW,
-    'green': sd.COLOR_GREEN,
-    'cyan': sd.COLOR_CYAN,
-    'blue': sd.COLOR_BLUE,
-    'purple': sd.COLOR_PURPLE
+    0: {'red': sd.COLOR_RED},
+    1: {'orange': sd.COLOR_ORANGE},
+    2: {'yellow': sd.COLOR_YELLOW},
+    3: {'green': sd.COLOR_GREEN},
+    4: {'cyan': sd.COLOR_CYAN},
+    5: {'blue': sd.COLOR_BLUE},
+    6: {'purple': sd.COLOR_PURPLE}
 }
 
 for key, it in dict_menu.items():
-    print(key, ':', it)
+    print(key, ':', *it)
 
 user_data = int(input('Введите желаемый цвет > '))
 
 for number, color_menu in dict_menu.items():
-    while user_data > 6 or user_data < 0:
-        print('Вы ввели не корректный номер')
-        user_data = int(input('Введите желаемый цвет > '))
+    for color_menu_color, color in color_menu.items():
+        while user_data > 6 or user_data < 0:
+            print('Вы ввели не корректный номер')
+            user_data = int(input('Введите желаемый цвет > '))
+            break
+        if user_data == number:
+            color = color_menu[color_menu_color]
         break
-    if user_data == number:
-        color = dict_menu_color[color_menu]
-        break
+
 
 figur(point=point_0, angle=angle, length=length)
 
