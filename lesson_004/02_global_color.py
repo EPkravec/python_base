@@ -64,8 +64,8 @@ for number, color_menu in dict_menu.items():
             print('Вы ввели не корректный номер')
             user_data = int(input('Введите желаемый цвет > '))
             break
-        if user_data == number:
-            color = color_menu[color_menu_color]
+    if user_data == number:
+        color = color_menu[color_menu_color]
         break
 
 delta = delta_triangle = 120

@@ -37,9 +37,9 @@ for number, figures_delta in dict_menu.items():
             print('Вы ввели не корректный номер')
             user_data = int(input('Введите желаемый цвет > '))
             break
-        if user_data == number:
-            delta = figures_delta[figures_delta_key]
-            break
+    if user_data == number:
+        delta = figures_delta[figures_delta_key]
+        break
 
 figur(start_point=point, angle=angle, length=length)
 
