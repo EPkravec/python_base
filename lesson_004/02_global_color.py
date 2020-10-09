@@ -42,7 +42,7 @@ point_triangle = sd.get_point(100, 50)
 point_square = sd.get_point(400, 50)
 point_pentagon = sd.get_point(400, 400)
 point_hexagon = sd.get_point(100, 400)
-
+# TODO не рекомендуется использовать названия структур данных в именах переменных, тут может быть название цвета
 dict_menu = {
     0: {'red': sd.COLOR_RED},
     1: {'orange': sd.COLOR_ORANGE},
@@ -60,7 +60,7 @@ user_data = int(input('Введите желаемый цвет > '))
 
 for number, color_menu in dict_menu.items():
     for color_menu_color, color in color_menu.items():
-        while user_data > 6 or user_data < 0:
+        while user_data > 6 or user_data < 0: # TODO у тебя же есть словарь dict_menu, его и используй if user_data not in dict_menu ...
             print('Вы ввели не корректный номер')
             user_data = int(input('Введите желаемый цвет > '))
             break

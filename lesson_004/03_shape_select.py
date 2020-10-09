@@ -33,7 +33,7 @@ user_data = int(input('Введите желаемую фигуру > '))
 
 for number, figures_delta in dict_menu.items():
     for figures_delta_key, delta in figures_delta.items():
-        while user_data > 3 or user_data < 0:
+        while user_data > 3 or user_data < 0: # TODO тут аналогично со вторым заданием
             print('Вы ввели не корректный номер')
             user_data = int(input('Введите желаемый цвет > '))
             break

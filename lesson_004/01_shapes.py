@@ -8,6 +8,8 @@ sd.resolution = (600, 600)
 def figur(start_point, angle, length):
     v1 = sd.get_vector(start_point=start_point, angle=angle, length=length)
     v1.draw()
+    # TODO delta надо передавать в ф-ию, из ф-ии использовать глобальные переменные, темболее так неочевидно - не стоит, 
+    #  не сразу понятно, что такое delta и где она меняется. Да и вообще лучше её вычислять тут по кол-ву углов.
     if delta < 73:
         end_range = 181
     elif delta > 73:
