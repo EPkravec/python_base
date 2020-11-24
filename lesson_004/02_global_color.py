@@ -42,15 +42,23 @@ point_triangle = sd.get_point(100, 50)
 point_square = sd.get_point(400, 50)
 point_pentagon = sd.get_point(400, 400)
 point_hexagon = sd.get_point(100, 400)
-# TODO не рекомендуется использовать названия структур данных в именах переменных, тут может быть название цвета
+
+red = sd.COLOR_RED
+orange = sd.COLOR_ORANGE
+yellow = sd.COLOR_YELLOW
+green = sd.COLOR_GREEN
+cyan = sd.COLOR_CYAN
+blue = sd.COLOR_BLUE
+purple = sd.COLOR_PURPLE
+
 dict_menu = {
-    0: {'red': sd.COLOR_RED},
-    1: {'orange': sd.COLOR_ORANGE},
-    2: {'yellow': sd.COLOR_YELLOW},
-    3: {'green': sd.COLOR_GREEN},
-    4: {'cyan': sd.COLOR_CYAN},
-    5: {'blue': sd.COLOR_BLUE},
-    6: {'purple': sd.COLOR_PURPLE}
+    0: {'red': red},
+    1: {'orange': orange},
+    2: {'yellow': yellow},
+    3: {'green': green},
+    4: {'cyan': cyan},
+    5: {'blue': blue},
+    6: {'purple': purple}
 }
 
 for key, it in dict_menu.items():
