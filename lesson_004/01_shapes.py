@@ -8,6 +8,7 @@ sd.resolution = (600, 600)
 def figur(start_point, angle, length):
     v1 = sd.get_vector(start_point=start_point, angle=angle, length=length)
     v1.draw()
+    # TODO я писал в прошлой тудушке, тут непонятно откуда берется дельта, очень не рекомендуется использовать глобальные переменные, константы - можно но переменные - нет
     if delta < 73:
         end_range = 181
     elif delta > 73:
@@ -21,6 +22,7 @@ def figur(start_point, angle, length):
 
 
 def triangle(point, angle, length):
+    # TODO в этих функциях надо передавать дельту
     figur(start_point=point, angle=angle, length=length)
 
 

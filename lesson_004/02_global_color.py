@@ -50,7 +50,7 @@ green = sd.COLOR_GREEN
 cyan = sd.COLOR_CYAN
 blue = sd.COLOR_BLUE
 purple = sd.COLOR_PURPLE
-
+# тут молодец! Но можно было коды цветов сразу поместить в словарь, а не через переменную
 dict_menu = {
     0: {'red': red},
     1: {'orange': orange},
@@ -76,7 +76,7 @@ for number, color_menu in dict_menu.items():
     if user_data == number:
         color = color_menu[color_menu_color]
         break
-
+# TODO пожалуйста не используй глобальные переменные
 delta = delta_triangle = 120
 triangle(point=point_triangle, angle=angle, length=length)
 delta = delta_square = 90
