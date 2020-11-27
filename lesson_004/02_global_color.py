@@ -4,7 +4,7 @@ import simple_draw as sd
 sd.resolution = (600, 600)
 
 
-def figur(start_point, angle, length):
+def figur(start_point, angle, length, delta):
     v1 = sd.get_vector(start_point=start_point, angle=angle, length=length)
     v1.draw(color=color)
     if delta < 73:
@@ -19,20 +19,20 @@ def figur(start_point, angle, length):
     sd.line(start_point=v1.end_point, end_point=start_point, color=color)
 
 
-def triangle(point, angle, length):
-    figur(start_point=point, angle=angle, length=length)
+def triangle(point, angle, length, delta_triangle):
+    figur(start_point=point, angle=angle, length=length, delta=delta_triangle)
 
 
-def square(point, angle, length):
-    figur(start_point=point, angle=angle, length=length)
+def square(point, angle, length, delta_square):
+    figur(start_point=point, angle=angle, length=length, delta=delta_square)
 
 
-def pentagon(point, angle, length):
-    figur(start_point=point, angle=angle, length=length)
+def pentagon(point, angle, length, delta_pentagon):
+    figur(start_point=point, angle=angle, length=length, delta=delta_pentagon)
 
 
-def hexagon(point, angle, length):
-    figur(start_point=point, angle=angle, length=length)
+def hexagon(point, angle, length, delta_hexagon):
+    figur(start_point=point, angle=angle, length=length, delta=delta_hexagon)
 
 
 angle = 30
@@ -43,6 +43,11 @@ point_square = sd.get_point(400, 50)
 point_pentagon = sd.get_point(400, 400)
 point_hexagon = sd.get_point(100, 400)
 
+delta_triangle = 120
+delta_square = 90
+delta_pentagon = 72
+delta_hexagon = 60
+
 red = sd.COLOR_RED
 orange = sd.COLOR_ORANGE
 yellow = sd.COLOR_YELLOW
@@ -51,6 +56,7 @@ cyan = sd.COLOR_CYAN
 blue = sd.COLOR_BLUE
 purple = sd.COLOR_PURPLE
 # тут молодец! Но можно было коды цветов сразу поместить в словарь, а не через переменную
+# так и было !!!!! сказали сделать через переменную !
 dict_menu = {
     0: {'red': red},
     1: {'orange': orange},
@@ -76,13 +82,9 @@ for number, color_menu in dict_menu.items():
     if user_data == number:
         color = color_menu[color_menu_color]
         break
-# TODO пожалуйста не используй глобальные переменные
-delta = delta_triangle = 120
-triangle(point=point_triangle, angle=angle, length=length)
-delta = delta_square = 90
-square(point=point_square, angle=angle, length=length)
-delta = delta_pentagon = 72
-pentagon(point=point_pentagon, angle=angle, length=length)
-delta = delta_hexagon = 60
-hexagon(point=point_hexagon, angle=angle, length=length)
+
+triangle(point=point_triangle, angle=angle, length=length, delta_triangle=delta_triangle)
+square(point=point_square, angle=angle, length=length, delta_square=delta_square)
+pentagon(point=point_pentagon, angle=angle, length=length, delta_pentagon=delta_pentagon)
+hexagon(point=point_hexagon, angle=angle, length=length, delta_hexagon=delta_hexagon)
 sd.pause()
