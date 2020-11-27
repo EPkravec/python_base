@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import simple_draw as sd
 
+
 def figur(start_point, angle, length):
     v1 = sd.get_vector(start_point=start_point, angle=angle, length=length)
     v1.draw()
@@ -14,6 +15,7 @@ def figur(start_point, angle, length):
         v1 = sd.get_vector(start_point=next_point, angle=next_angle, length=length)
         v1.draw()
     sd.line(start_point=v1.end_point, end_point=start_point)
+
 
 angle = 30
 length = 100

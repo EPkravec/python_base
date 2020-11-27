@@ -1,46 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import simple_draw as sd
-import random
 
-sd.resolution = (1200, 600)
+sd.resolution = (600, 600)
 
-# На основе кода из практической части реализовать снегопад:
-# - создать списки данных для отрисовки N снежинок
-# - нарисовать падение этих N снежинок
-# - создать список рандомных длин лучей снежинок (от 10 до 100) и пусть все снежинки будут разные
-#
-#
-# for _ in range(20):
-#     x = random.randint(10, 1150)
-#     length = random.randint(10, 60)
-#     point_0 = sd.get_point(x, 550)
-#     sd.snowflake(center=point_0, length=length)
-
-# y = random.random()
-# N = 20
-#
-# def snoy (center, length):
-#     length_all = length * .75
-
-#
-# point_0 = sd.get_point(x, 550)
-# sd.snowflake(center=point_0, length=50)
-
-# Пригодятся функции
-# sd.get_point()
-# sd.snowflake()
-# sd.sleep()
-# sd.random_number()
-# sd.user_want_exit()
-
-#
-# x = 100
-# y = 550
-#
-# x2 = 150
-# y2 = 450
-x = [100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 125, 175, 225, 275, 325, 375, 425, 475, 525, 575]
+x = [100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 125, 175, 225, 275, 325, 375, 425, 475, 525, 575]  
 y = [550, 540, 530, 540, 550, 560, 545, 530, 500, 560, 550, 540, 530, 540, 550, 560, 545, 530, 500, 560]
 
 while True:
@@ -48,14 +12,31 @@ while True:
     for idx, val in enumerate(x):
         point = sd.get_point(x[idx], y[idx])
         sd.snowflake(center=point, length=10)
-        y[idx] -= 20
-        # TODO то есть получается, что если какая-то снежинка упала, то переходим на следующий шаг, не совсем правильно, я бы упавшие снежинки поднимал, то есть к координате по у прибавлял размер экрана по высоте
-        if y[idx] < 20:
-            break
+        y[idx] -= 20 * 0.75
+        if y[idx] < 2:
+            y[idx] = 600
     sd.sleep(0.1)
     if sd.user_want_exit():
         break
 sd.pause()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # TODO поправь тудушки и можешь приступать к второй части задания
 # Примерный алгоритм отрисовки снежинок
 #   навсегда
