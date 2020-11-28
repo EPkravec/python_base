@@ -12,8 +12,8 @@ while True:
     for idx, val in enumerate(x):
         point = sd.get_point(x[idx], y[idx])
         sd.snowflake(center=point, length=10)
-        y[idx] -= 20 * 0.75
-        if y[idx] < 2:
+        y[idx] -= 20 * 0.75 # TODO сделай пожалуйста рандомное падение  и также чтобы было больше похоже на снегопад, можно добавить рандомнеый сдвиг снежинки по оси х
+        if y[idx] < 2: # TODO тут молодец, но сделай, чтобы оставался сугроб, то есть чтобы перед поднятием снежинка последний раз отрисовалась внизу и всё.
             y[idx] = 600
     sd.sleep(0.1)
     if sd.user_want_exit():

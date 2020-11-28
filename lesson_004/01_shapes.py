@@ -11,7 +11,7 @@ def figur(start_point, angle, length, delta):
     if delta < 73:
         end_range = 181
     elif delta > 73:
-        end_range = 91
+    end_range = 91
     for next_angle in range(0, end_range, delta):
         next_point = v1.end_point
         next_angle += angle + delta
@@ -54,3 +54,5 @@ square(point=point_square, angle=angle, length=length, delta_square=delta_square
 pentagon(point=point_pentagon, angle=angle, length=length, delta_pentagon=delta_pentagon)
 hexagon(point=point_hexagon, angle=angle, length=length, delta_hexagon=delta_hexagon)
 sd.pause()
+
+# зачет!

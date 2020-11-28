@@ -88,3 +88,5 @@ square(point=point_square, angle=angle, length=length, delta_square=delta_square
 pentagon(point=point_pentagon, angle=angle, length=length, delta_pentagon=delta_pentagon)
 hexagon(point=point_hexagon, angle=angle, length=length, delta_hexagon=delta_hexagon)
 sd.pause()
+
+# зачет!

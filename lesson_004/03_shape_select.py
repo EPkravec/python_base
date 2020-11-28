@@ -47,3 +47,5 @@ for number, figures_delta in dict_menu.items():
 figur(start_point=point, angle=angle, length=length)
 
 sd.pause()
+
+# зачет!
