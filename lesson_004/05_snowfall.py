@@ -11,20 +11,21 @@ long = random.randint(10, 20)
 
 
 while True:
-    sd.clear_screen()
+    # sd.clear_screen() # TODO давай поэтапно, реализуй закрашивание снежинок, а не очищение экрана и рисование заново
     for idx, val in enumerate(x):
         point = sd.get_point(x[idx], y[idx])
         sd.snowflake(center=point, length=long)
-        y[idx] -= random.randint(20, 50)
+        y[idx] -= random.randint(5, 10)
+        # TODO в ф-ию randint можно отправлять отрицательные числа)
         x[idx] += random.randint(12, 25)
         x[idx] -= random.randint(12, 25)
-        if y[idx] < 2: # TODO тут молодец, но сделай, чтобы оставался сугроб, то есть чтобы перед поднятием снежинка последний раз отрисовалась внизу и всё.
+        if y[idx] < 20: # TODO тут молодец, но сделай, чтобы оставался сугроб, то есть чтобы перед поднятием снежинка последний раз отрисовалась внизу и всё.
             y[idx] = 600
-        elif y[idx] < 50:
-            for idx, val in enumerate(x):
-                point = sd.get_point(x[idx], y[idx])
-                sd.snowflake(center=point, length=long)
-    sd.sleep(0.3)
+        # elif y[idx] < 50: # TODO это лишнее
+        #     for idx, val in enumerate(x):
+        #         point = sd.get_point(x[idx], y[idx])
+        #         sd.snowflake(center=point, length=long)
+    sd.sleep(0.2)
     if sd.user_want_exit():
         break
 sd.pause()
