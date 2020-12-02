@@ -16,8 +16,9 @@ long = random.randint(10, 20)
 # вощзможно ошибка в размерностях снежинок и много рандомностей и условию < 0  и/или  < 20 не удовлетворяет
 # Так же сделал без clear_screen аналогичная ситуация объединить не получаеться
 while True:
-    sd.clear_screen()
+    # sd.clear_screen() # TODO это закомментируем, оно лишнее и с ним не получится реализовать сугроб
     for idx, val in enumerate(x):
+        # TODO тебе в этой ф-ии надо добавить вызов sd.snowflake(center=point, length=long) с параметром цвет=фон, тогда снежинка будет закрашена фоном, подумай, где это надо добавить
         point = sd.get_point(x[idx], y[idx])
         y[idx] -= random.randint(1, 15)
         if y[idx] < 0:
@@ -26,7 +27,7 @@ while True:
         x[idx] -= random.randint(-12, 25)
         if y[idx] < 20:
             y[idx] = 0
-        sd.snowflake(center=point, length=long)
+        sd.snowflake(center=point, length=long) 
     sd.sleep(0.15)
     if sd.user_want_exit():
         break
