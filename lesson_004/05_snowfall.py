@@ -8,28 +8,23 @@ sd.resolution = (600, 600)
 x = [100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 125, 175, 225, 275, 325, 375, 425, 475, 525, 575]
 y = [590, 593, 595, 598, 596, 598, 599, 594, 597, 598, 599, 596, 599, 598, 599, 597, 598, 599, 599, 596]
 long = random.randint(10, 20)
+background_color = (0, 8, 98)
 
-
-# todo  проблемма в том что пробовал сделать отдельно прорисовку и остановку снежинки внизу получилось , так же отдельно
-# todo их движение сверху вниз, но сединить в одно целоле не получается пробовал сделать через функции сделал 2
-# отдельные ф-и не помогло выполняеться только последняя, тоесть или отдельная остановка или снегопад без сугроба
-# вощзможно ошибка в размерностях снежинок и много рандомностей и условию < 0  и/или  < 20 не удовлетворяет
-# Так же сделал без clear_screen аналогичная ситуация объединить не получаеться
 while True:
-    # sd.clear_screen() # TODO это закомментируем, оно лишнее и с ним не получится реализовать сугроб
     for idx, val in enumerate(x):
-        # TODO тебе в этой ф-ии надо добавить вызов sd.snowflake(center=point, length=long) с параметром цвет=фон, тогда снежинка будет закрашена фоном, подумай, где это надо добавить
+        # TODO очень смущает то как отображается результат думаю что неверно.?!
         point = sd.get_point(x[idx], y[idx])
+        sd.snowflake(center=point, length=long)
+        sd.snowflake(center=point, length=long, color=background_color)
         y[idx] -= random.randint(1, 15)
         if y[idx] < 0:
             y[idx] = 600
+            sd.snowflake(center=point, length=long)
         x[idx] += random.randint(-12, 25)
         x[idx] -= random.randint(-12, 25)
         if y[idx] < 20:
             y[idx] = 0
-        sd.snowflake(center=point, length=long) 
-    sd.sleep(0.15)
+    sd.sleep(0.5)
     if sd.user_want_exit():
         break
 sd.pause()
-
