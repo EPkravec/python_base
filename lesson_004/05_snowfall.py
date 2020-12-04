@@ -22,17 +22,20 @@ while True:
 
         # todo  что то я делаю не так невыходит вообще %)
         point = sd.get_point(x[idx], y[idx])
+        print(point)
         sd.snowflake(center=point, length=long, color=background_color)
-        y[idx] -= random.randint(1, 15)
-        x[idx] += random.randint(-12, 25)
-        # x[idx] -= random.randint(-12, 25)
+        y[idx] -= random.randint(5, 15)
+        x[idx] += random.randint(-10, 10)
+        # TODO всё, я понял, ты вверху вычисляешь point и получаешь значение уже не привязанное к координатам,
+        #  потом меняешь координаты, и надо опять пересчитать point
+        point = sd.get_point(x[idx], y[idx])
         sd.snowflake(center=point, length=long)
         if y[idx] < 0:
             y[idx] = 600
-            sd.snowflake(center=point, length=long)
-        if y[idx] < 20:
-            y[idx] = 0
-    sd.sleep(0.5)
+            # sd.snowflake(center=point, length=long)
+        # if y[idx] < 20:
+        #     y[idx] = 0
+    # sd.sleep(0.5)
     if sd.user_want_exit():
         break
 sd.pause()
