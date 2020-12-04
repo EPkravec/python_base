@@ -6,3 +6,11 @@
 # https://docs.python.org/3/library/stdtypes.html#str.join
 
 # TODO здесь ваш код
+import room_1, room_2
+
+
+delimiter = ', '
+people = room_1.folks + room_2.folks
+print('На районе живут:', delimiter.join(people))
+
+
