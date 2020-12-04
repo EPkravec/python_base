@@ -19,17 +19,17 @@ while True:
         #  сделать проверку, если снежинка упала, то перенести координату вверх на 600, у тебя есть это условие
         #  всё, попробуй. так будет оставаться сугроб, т.к. внизу ты отрисуешь снежинку, потом если она упала, 
         #  то поднимешь координату и на следующей итерации закрасится не упавшая снежинка а снежинка по координате 600, которой пока нет
-        # TODO очень смущает то как отображается результат думаю что неверно.?!
+
+        # todo  что то я делаю не так невыходит вообще %)
         point = sd.get_point(x[idx], y[idx])
-        sd.snowflake(center=point, length=long)
         sd.snowflake(center=point, length=long, color=background_color)
         y[idx] -= random.randint(1, 15)
+        x[idx] += random.randint(-12, 25)
+        # x[idx] -= random.randint(-12, 25)
+        sd.snowflake(center=point, length=long)
         if y[idx] < 0:
             y[idx] = 600
             sd.snowflake(center=point, length=long)
-        # TODO когда я писал, что можно минус указывать, я имел ввиду, что эти 2 условия можно объединить)
-        x[idx] += random.randint(-12, 25)
-        x[idx] -= random.randint(-12, 25)
         if y[idx] < 20:
             y[idx] = 0
     sd.sleep(0.5)
