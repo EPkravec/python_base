@@ -8,3 +8,5 @@ print('В комнате room_2 живут:', *room_2.folks)
 delimiter = ', '
 people = room_1.folks + room_2.folks
 print('На неизвестном улице живут:', delimiter.join(people))
+
+# зачет!
