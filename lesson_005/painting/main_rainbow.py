@@ -2,15 +2,15 @@ import simple_draw as sd
 
 
 def rab():
-    sd.resolution = (600, 600)
-    x, y = 640, -250
+    sd.resolution = (1200, 600)
+    x, y = 0, 0
     rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
                       sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
 
     center = sd.get_point(x, y)
-    radius = 600
-    steep = 20
-    width = 20
+    radius = 1150
+    steep = 10
+    width = 10
     i = -1
     max_range = radius + steep * 7
     for radius in range(radius, max_range, steep):
