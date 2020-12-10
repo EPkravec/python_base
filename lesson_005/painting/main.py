@@ -1,4 +1,4 @@
-from painting import main_rainbow, main_snowfall
+import main_rainbow, main_snowfall
 
 # from painting import main_smile
 import simple_draw as sd
