@@ -1,5 +1,5 @@
-from painting import rainbow
-from painting import snowfall
+from painting import main_rainbow
+from painting import main_snowfall
 import simple_draw as sd
 
 # sd.resolution = (1200, 600)
@@ -7,5 +7,5 @@ import simple_draw as sd
 # sd.caption = 'Радуга дуга 1 и 2 задание'
 
 
-snowfall.sno()
-rainbow.rab()
+main_snowfall.sno()
+main_rainbow.rab()

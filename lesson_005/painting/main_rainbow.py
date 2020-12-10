@@ -2,6 +2,7 @@ import simple_draw as sd
 
 
 def rab():
+    sd.resolution = (600, 600)
     x, y = 640, -250
     rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
                       sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
