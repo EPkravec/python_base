@@ -1,10 +1,8 @@
 import simple_draw as sd
 
-sd.resolution = (700, 700)
-sd.background_color = (0, 0, 255)
-sd.caption = 'Смайлики'
 
 def smail(x, y):
+    sd.resolution = (1200, 600)
     radius_face = 40
     coordinat_face = sd.get_point(x, y)
     radius__okko_left = 5
@@ -22,10 +20,10 @@ def smail(x, y):
         sd.lines(point_list=my_list_left_cheek)
         sd.lines(point_list=my_list_center_cheek)
 
-
-for _ in range(10):
-    x = sd.random_number(100, 500)
-    y = sd.random_number(100, 500)
+def run_smail():
+    x = 650
+    y = 200
     smail(x=x, y=y)
 
-sd.pause()
+if __name__ == '__04_painting__':
+    sd.pause()
