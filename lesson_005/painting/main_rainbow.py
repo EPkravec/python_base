@@ -19,9 +19,6 @@ def rab():
         sd.circle(center_position=center, radius=radius, color=colors, width=width)
     return
 
-# TODO вот тут ты вызываешь ф-ию, в общем когда ты импортируешь этот модуль, то вызывается ф-ия и
-#  потом пауза и вся программа стопится, ты ф-ию должен вызывать
-#  в модуле main а тут, чтобы не вызывалафи ф-ия и не стовалось всё, напиши условие if __name__ == '__main__':
-rab()
 
-sd.pause()
+if __name__ == '__04_painting__':
+    sd.pause()

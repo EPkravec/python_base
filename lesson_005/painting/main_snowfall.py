@@ -26,5 +26,5 @@ def sno():
     return
 
 
-sno()
-sd.pause()
+if __name__ == '__04_painting__':
+    sd.pause()
