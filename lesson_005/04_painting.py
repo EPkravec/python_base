@@ -1,4 +1,4 @@
-from painting import main_rainbow, main_snowfall, main_tree, main_smile
+from painting import main_rainbow, main_snowfall, main_tree, main_smile, main_the_sun
 import simple_draw as sd
 
 
@@ -14,6 +14,7 @@ x_1, y_1 = 1000, 20
 
 
 main_rainbow.rab()
+main_the_sun.sun()
 main_smile.run_smail()
 main_tree.run_tree(angle, length, x, y)
 main_tree.run_tree(angle_1, length_1, x_1, y_1)
