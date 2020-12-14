@@ -25,5 +25,5 @@ def run_smail():
     y = 200
     smail(x=x, y=y)
 
-if __name__ == '__04_painting__':
+if __name__ == '__main__':
     sd.pause()

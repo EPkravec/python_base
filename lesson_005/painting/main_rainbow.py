@@ -20,5 +20,5 @@ def rab():
     return
 
 
-if __name__ == '__04_painting__':
+if __name__ == '__main__':
     sd.pause()

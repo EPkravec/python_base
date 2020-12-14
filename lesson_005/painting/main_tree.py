@@ -31,5 +31,5 @@ def run_tree(angle, length, x, y):
     draw_branches(point=root_point, angle=angle, length=length)
 
 
-if __name__ == '__04_painting__':
+if __name__ == '__main__':
     sd.pause()
