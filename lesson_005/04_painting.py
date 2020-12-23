@@ -11,10 +11,10 @@ sd.resolution = (1300, 600)
 sd.caption = 'Утро в деревне'
 
 angle = 90
-length = 20
+length = 25
 angle_1 = 90
 length_1 = 30
-x, y = 850, 0
+x, y = 950, 250
 x_1, y_1 = 1000, 20
 
 
