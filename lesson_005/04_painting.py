@@ -26,4 +26,4 @@ run_tree(angle, length, x, y)
 run_tree(angle_1, length_1, x_1, y_1)
 sno()
 
-
+# зачет!
