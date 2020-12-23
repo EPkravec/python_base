@@ -1,3 +1,4 @@
+# TODO лучше импортировать не модули, а что-то конкретное внутри них, например в твоем случае ф-ии
 from painting import main_rainbow, main_snowfall, main_tree, main_smile, main_the_sun, main_homme
 import simple_draw as sd
 
