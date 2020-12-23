@@ -38,7 +38,7 @@ def smail(x, y):
 
 
 def run_smail():
-    x = 650
+    x = 750
     y = 200
     smail(x=x, y=y)
 
