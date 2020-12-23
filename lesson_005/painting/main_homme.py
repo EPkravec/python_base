@@ -18,21 +18,17 @@ def homme(x, y):
     end_r_point = sd.get_point(450, 250)
     sd.line(start_r_point, end_r_point, width=5)
 
-
     start_point_kr = sd.get_point(50, 250)
     point_right_kr = sd.get_point(500, 250)
     konek_kr = sd.get_point(280, 350)
     point_list = [start_point_kr, point_right_kr, konek_kr]
-    # TODO в pycharm можешь нажать ctrl и ЛКМ на ф-ию lines и там можно увидить, что к сожалению нельзя сделать заливку.
     sd.lines(point_list, closed=True, color=sd.COLOR_RED, width=1)
 
 
-# TODO run? может draw
-def run_homme():
+def draw_homme():
     x, y, = 100, 0
     homme(x, y)
 
-
 if __name__ == '__main__':
-    run_homme() # TODO почему тут была только пауза, лучше добавить run_homme(), чтобы можно было проверить только отрисовку дома
+    draw_homme()
     sd.pause()
