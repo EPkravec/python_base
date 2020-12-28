@@ -79,7 +79,7 @@ print(*random_number_pk, sep="")
 number_user = str(input('Введите четырехзначное число c неповторяющимися цифрами - '))
 number_user_list = list(number_user)
 while True:
-
+    # TODO тут намного проще можно, используй приведение к set-у, чтобы понять, что цифры не повторяются.
     if number_user_list[0] == number_user_list[1]:
         number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
         number_user_list = list(number_user)
