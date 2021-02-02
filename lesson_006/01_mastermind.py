@@ -44,111 +44,55 @@
 # Это пример применения SOLID принципа (см https://goo.gl/GFMoaI) в архитектуре программ.
 # Точнее, в этом случае важен принцип единственной ответственности - https://goo.gl/rYb3hT
 
-# TODO пока делаю все в одном файле после все раскидаю
-
 import random
 
-# todo  проверка на повторяемость цыфр вроде работает а вроде нет (не попадались повторения) + сократь до цикла ?
-#
+one_number = random.randint(0, 9)
+two_number = random.randint(0, 9)
+fhree_number = random.randint(0, 9)
+four_number = random.randint(0, 9)
+
+number_comp = str(one_number) + str(two_number) + str(fhree_number) + str(four_number)
+
+print(' Ну что же сыграем в игру ')
+print(' ------------------------ ')
+print(' Введите четырех значное число')
+
+num = 0
 while True:
-    number = str(random.randint(1000, 9999))
-    random_number_pk = list(number)
-    if random_number_pk[0] == random_number_pk[1]:
-        random_number_pk[0] = str(random.randint(1, 9))
+    num += 1
+    print(f'номер попытки {num}')
+    number_us = str(input(':'))
 
-    if random_number_pk[2] == random_number_pk[1]:
-        random_number_pk[2] = str(random.randint(1, 9))
+    if number_us == 'check':
+        print(number_comp)
+        continue
 
-    if random_number_pk[2] == random_number_pk[0]:
-        random_number_pk[2] = str(random.randint(1, 9))
+    if len(number_us) != 4:
+        print('Должно быть 4 цифры')
+        continue
 
-    if random_number_pk[3] == random_number_pk[2]:
-        random_number_pk[3] = str(random.randint(1, 9))
+    nu = list(number_us)
+    nc = list(number_comp)
 
-    if random_number_pk[3] == random_number_pk[1]:
-        random_number_pk[3] = str(random.randint(1, 9))
+    bulls = 0
+    for j in range(4):
+        if nu[j] == nc[j]:
+            bulls += 1
+            nu[j] = ''
+            nc[j] = '*'
 
-    if random_number_pk[3] == random_number_pk[0]:
-        random_number_pk[3] = str(random.randint(1, 9))
+    if bulls == 4:
+        print('Вы выграли !')
+        break
 
-    break
-print(*random_number_pk, sep="")
+    cows = 0
+    for j in range(4):
+        entered_digit = nc[j]
+        for i in range(4):
+            if entered_digit == nc[i]:
+                cows += 1
+                nc[i] = '*'
+                break
 
-# todo  сократить код и сделать как то цикл ?:).  после повторного ввода одного и тогоже цисла на второй раз уходит в брейк
-#  если убрать брейк то цикл бесконечный ) как остановить ?:)
-number_user = str(input('Введите четырехзначное число c неповторяющимися цифрами - '))
-number_user_list = list(number_user)
-while True:
-    # TODO тут намного проще можно, используй приведение к set-у, чтобы понять, что цифры не повторяются.
-    if number_user_list[0] == number_user_list[1]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[0] == number_user_list[2]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[0] == number_user_list[3]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[1] == number_user_list[0]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[1] == number_user_list[2]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[1] == number_user_list[3]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[2] == number_user_list[0]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[2] == number_user_list[1]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[2] == number_user_list[3]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[3] == number_user_list[0]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[3] == number_user_list[1]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-
-    if number_user_list[3] == number_user_list[2]:
-        number_user = str(input('Вы ввели четырехзначное число c повторяющимися цифрами, введите повторно --'))
-        number_user_list = list(number_user)
-    break
-print('Вы ввели - ', *number_user_list, sep="")
-
-
-# todo  это процеес сравнения в ""  процесс )
-while True:
-    dict_otvet = {}
-    if number_user_list[0] == random_number_pk[0]:
-        apdict_otvet['bulls'] = 1
-    else:
-        dict_otvet['cows'] = 1
-    if number_user_list[1] == random_number_pk[1]:
-        dict_otvet['bulls'] = 1
-    else:
-        dict_otvet['cows'] = 1
-    if number_user_list[2] == random_number_pk[2]:
-        dict_otvet['bulls'] = 1
-    else:
-        dict_otvet['cows'] = 1
-    if number_user_list[3] == random_number_pk[3]:
-        dict_otvet['bulls'] = 1
-    else:
-        dict_otvet['cows'] = 1
-    break
-    print(dict_otvet)
+    print(f' быков {bulls}')
+    print(f' коров {cows}')
