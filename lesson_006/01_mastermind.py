@@ -50,7 +50,7 @@ one_number = random.randint(0, 9)
 two_number = random.randint(0, 9)
 fhree_number = random.randint(0, 9)
 four_number = random.randint(0, 9)
-
+# TODO где гарантия, что цифры не будут совпадать? По условию не должны
 number_comp = str(one_number) + str(two_number) + str(fhree_number) + str(four_number)
 
 print(' Ну что же сыграем в игру ')
@@ -62,15 +62,15 @@ while True:
     num += 1
     print(f'номер попытки {num}')
     number_us = str(input(':'))
-
+    # TODO получается, что пользователь может вывесть значение?
     if number_us == 'check':
         print(number_comp)
         continue
-
+    # TODO кроме этой проверки надо ещ добавить проверку, что все цифры разные.
     if len(number_us) != 4:
         print('Должно быть 4 цифры')
         continue
-
+        
     nu = list(number_us)
     nc = list(number_comp)
 
@@ -84,10 +84,11 @@ while True:
     if bulls == 4:
         print('Вы выграли !')
         break
-
+    
     cows = 0
     for j in range(4):
         entered_digit = nc[j]
+        # TODO для проверки вхождения числа в список можно использовать оператор in
         for i in range(4):
             if entered_digit == nc[i]:
                 cows += 1
