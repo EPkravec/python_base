@@ -1,11 +1,15 @@
 import random
 
-
+# TODO что за название такое ф-ии, все буковки должны быть маленькие и разделитель - нижнее подчеркивание,
+#  ты в java стиле пишешь.
 def numberComp():
     one_number = random.randint(0, 9)
     two_number = random.randint(0, 9)
     fhree_number = random.randint(0, 9)
     four_number = random.randint(0, 9)
+    # TODO сделай проверку проще, можно преобразовать число к set-у и так понять, что все числа внутри разные, ещё пригодится ф-ия len()
+    #  И у тебя если число не прошло по этим условиям, то ф-ия возвращает None, а по идее она должна дальше генерировать, пока не получится.
+    #  Можно ещё постепенно генерировать число, сначала рандом из всех цифр, потом из всех кроме той, которая уже выпала итд.
     if one_number != two_number and one_number != fhree_number and one_number != four_number and \
             two_number != fhree_number and two_number != four_number and \
             fhree_number != four_number:
@@ -13,11 +17,12 @@ def numberComp():
         print(type(number_comp))
         return number_comp
 
-
+# TODO тут тоже название поправь.
 def numberUS():
     num = 0
     while True:
         num += 1
+        # TODO также все взаимодействие с пользователем должнор проходить через главный модуль программы, тут только набор ф-ий.
         print(f'номер попытки {num}')
         number_us = str(input(':'))
         if number_us == 'check':
@@ -38,7 +43,7 @@ def numberUS():
             continue
 
         nu = list(number_us)
-        nc = list(numberComp())
+        nc = list(numberComp()) # TODO у тебя ф-ия numberComp возвращает None
 
         bulls = 0
         for j in range(4):
