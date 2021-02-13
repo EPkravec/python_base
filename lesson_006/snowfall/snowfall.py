@@ -5,25 +5,25 @@ import random
 
 N = 20
 
-point = {x + 1: {y: random.randint(100, 600) for y in 'xy'} for x in range(N)}
+point_1 = {x + 1: {y: random.randint(100, 600) for y in 'xy'} for x in range(N)}
 sd.resolution = (600, 600)
 long = random.randint(10, 20)
 background_color = (0, 8, 98)
 
 x = []
 y = []
-
-for key in point:
+number_point = []
+for key in point_1:
     # print(f'первые ключи {key}')
-    # print(f'первые згначения {point[key]}')
-    for key1 in point[key]:
+    # print(f'первые згначения {point_1[key]}')
+    for key1 in point_1[key]:
         # print(f'вторые ключи {key1}')
         # print(f'втоорые згначения {point[key][key1]}')
         if key1 == 'x':
-            x.append(point[key][key1])
+            x.append(point_1[key][key1])
             # print(f'список с координатами Х {x}')
         if key1 == 'y':
-            y.append(point[key][key1])
+            y.append(point_1[key][key1])
             # print(f'список с координатами У {y}')
 
 while True:
@@ -35,7 +35,13 @@ while True:
         point = sd.get_point(x[idx], y[idx])
         sd.snowflake(center=point, length=long)
         if y[idx] < 20:
+
             y[idx] = 600
+            for key in point_1: # todo чет всеномера выдает
+                print(f'{key}')
+                number_point.append(key)
+                print(number_point)
+
     if sd.user_want_exit():
         break
 sd.pause()
