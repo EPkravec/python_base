@@ -1,6 +1,44 @@
 # -*- coding: utf-8 -*-
 
 import simple_draw as sd
+import random
+
+N = 20
+
+point = {x + 1: {y: random.randint(100, 600) for y in 'xy'} for x in range(N)}
+sd.resolution = (600, 600)
+long = random.randint(10, 20)
+background_color = (0, 8, 98)
+
+x = []
+y = []
+
+for key in point:
+    # print(f'первые ключи {key}')
+    # print(f'первые згначения {point[key]}')
+    for key1 in point[key]:
+        # print(f'вторые ключи {key1}')
+        # print(f'втоорые згначения {point[key][key1]}')
+        if key1 == 'x':
+            x.append(point[key][key1])
+            # print(f'список с координатами Х {x}')
+        if key1 == 'y':
+            y.append(point[key][key1])
+            # print(f'список с координатами У {y}')
+
+while True:
+    for idx, val in enumerate(x):
+        point = sd.get_point(x[idx], y[idx])
+        sd.snowflake(center=point, length=long, color=background_color)
+        y[idx] -= random.randint(5, 15)
+        x[idx] += random.randint(-10, 10)
+        point = sd.get_point(x[idx], y[idx])
+        sd.snowflake(center=point, length=long)
+        if y[idx] < 20:
+            y[idx] = 600
+    if sd.user_want_exit():
+        break
+sd.pause()
 
 # На основе кода из lesson_004/05_snowfall.py
 # сделать модуль snowfall.py в котором реализовать следующие функции
@@ -15,15 +53,15 @@ import simple_draw as sd
 # обращаясь ТОЛЬКО к функциям модуля snowfall
 
 # создать_снежинки(N)
-while True:
-    #  нарисовать_снежинки_цветом(color=sd.background_color)
-    #  сдвинуть_снежинки()
-    #  нарисовать_снежинки_цветом(color)
-    #  если есть номера_достигших_низа_экрана() то
-    #       удалить_снежинки(номера)
-    #       создать_снежинки(count)
-    sd.sleep(0.1)
-    if sd.user_want_exit():
-        break
-
-sd.pause()
+# while True:
+#  нарисовать_снежинки_цветом(color=sd.background_color)
+#  сдвинуть_снежинки()
+#  нарисовать_снежинки_цветом(color)
+#  если есть номера_достигших_низа_экрана() то
+#       удалить_снежинки(номера)
+#       создать_снежинки(count)
+#     sd.sleep(0.1)
+#     if sd.user_want_exit():
+#         break
+#
+# sd.pause()
