@@ -1,5 +1,5 @@
 import random
-from mastermind import number_us  #Todo что за ???????????????????????
+from mastermind import number_us1
 
 
 def process():
@@ -19,7 +19,7 @@ def process():
             while game == False:
                 num += 1
                 print(f'номер попытки {num}')
-                number_us = str(input(':'))
+                number_us = number_us1  # todo вот так сделал !
                 print(number_comp)
                 if number_us == 'check':
                     print(number_comp)
@@ -66,6 +66,6 @@ def process():
             continue
     return
 
+
 if __name__ == '__main__':
     process()
-
