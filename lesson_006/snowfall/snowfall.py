@@ -37,7 +37,7 @@ while True:
         if y[idx] < 20:
 
             y[idx] = 600
-            for key in point_1: # todo чет всеномера выдает
+            for key in point_1:  # todo чет всеномера выдает
                 print(f'{key}')
                 number_point.append(key)
                 print(number_point)
