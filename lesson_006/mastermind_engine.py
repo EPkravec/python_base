@@ -1,22 +1,16 @@
 import random
-from mastermind import numberUser
 
-# TODO эту ф-ию тебе надо импортировать в mastermind
+
 def numberComp():
     while True:
-        number_comp = set([random.randint(0, 9) for _ in range(4)]) # TODO тубу же надо число генерировать, лучше его в
-                                                                    #  спиок записать, а не в set, а set использовать уже для того, чтобы понять, что в списке 4 разных числа
-        if len(number_comp) > 4 or len(number_comp) < 4: # TODO врядли может быть больше 4-х, тут вообще можно сделать одну проверку, если != 4
-            continue
-        if len(number_comp) == 4:
-            print(number_comp)
+        number_comp = [random.randint(0, 9) for _ in range(4)]
+        number = set(number_comp)
+        if len(number) == 4:
+            print(f' из нумберкомп {number_comp}')
             return number_comp
-# TODO вот вызов этой ф-ии тоже должен быть в модуле mastermind. Давай пока там импортируй эту ф-ию и вызови генерацию числа
-print(numberComp())
-number_us = numberUser()
 
 number_comp = numberComp()
-
+number_us =  # todo  а дальше ???? если буду импортировать то буду циклить !!!!!!!
 
 def process():
     while True:
@@ -50,7 +44,7 @@ def process():
 
 if __name__ == '__main__':
     process()
-
+    numberComp()
 # TODO прочитай ещё раз условие, тут должны быть... приведу цитату
 #  "Составить отдельный модуль mastermind_engine, реализующий функциональность игры.
 #  В этом модуле нужно реализовать функции:
