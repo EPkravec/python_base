@@ -13,9 +13,12 @@ background_color = (0, 8, 98)
 x = []
 y = []
 number_point = []
+# TODO тут используй ф-ию items() и доставай сразу и ключ и значение
 for key in point_1:
     # print(f'первые ключи {key}')
     # print(f'первые згначения {point_1[key]}')
+    import pdb;pdb.set_trace()
+    # TODO вместо этого цикла можно ведь просто из словаря сразу брать х и у
     for key1 in point_1[key]:
         # print(f'вторые ключи {key1}')
         # print(f'втоорые згначения {point[key][key1]}')
@@ -36,9 +39,10 @@ while True:
         sd.snowflake(center=point, length=long)
         if y[idx] < 20:
 
-            y[idx] = 600
+            y[idx] = 600 # TODO я бы по х тоже генерировал новую позицию для числа.
             for key in point_1:  # todo чет всеномера выдает
                 print(f'{key}')
+                # TODO number_point у тебя для чего?
                 number_point.append(key)
                 print(number_point)
 
