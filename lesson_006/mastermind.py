@@ -1,4 +1,4 @@
-from mastermind_engine import numberComp, process # todo я их только импортирую не вызываю отдельно ??????
+from mastermind_engine import numberComp, process
 print(' Ну что же сыграем в игру ')
 print(' ------------------------ ')
 print(' Введите четырех значное число')

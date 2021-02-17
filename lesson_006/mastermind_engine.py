@@ -1,23 +1,36 @@
 import random
 
-# TODO я писал вроде в прошлый раз, чтобы ты тут реализовал отдельные маленькие ф-ии:
-#  генерация числа, она есть, это хорошо, можно даже сделать, чтобы эта ф-ия в глобальную переменную закидывала
-#  загаданное число. Далее сдделай ф-ию, которая будет принимать число, брать эту глобальную переменную
-#  и возвращать коров и быков. Ну и можно сделать ф-ию валидации, котораяя будет принимать число и возвращать,
-#  все ли в нем норм, может возвращать true/false. Вот, когда реализуешь все эти ф-ии тут, потом будешь
-#  их дергать из главного модуля и никаких конфликтов не будет.
-def numberComp():
+
+def genereatNumber():
+    number = set([random.randint(0, 9) for _ in range(4)])
+    return number
+
+
+def numberComp(number):
     while True:
-        number_comp = [random.randint(0, 9) for _ in range(4)]
-        number = set(number_comp)
         if len(number) == 4:
-            print(f' из нумберкомп {number_comp}')
-            return number_comp
+            print(f' из нумберкомп {number}')
+            return number
 
-number_comp = numberComp()
-number_us =  # todo  а дальше ???? если буду импортировать то буду циклить !!!!!!!
 
-def process():
+def numberUser():
+    num = 0
+    while True:
+        num += 1
+        print(f'номер попытки {num}')
+        number_us = str(input(':'))
+        numb = set(number_us)
+        if len(numb) != 4:
+            print('Должно быть 4 цифры введите повторно')
+            continue
+        if len(numb) == 4:
+            return number_us
+        else:
+            print('Вы ввели одинаковые цифры')
+            continue
+
+
+def bulls_cows(number_us, number_comp):
     while True:
 
         nu = list(number_us)
@@ -42,12 +55,19 @@ def process():
                     cows += 1
                     nc[i] = '*'
                     break
-        # TODO для определения быков и коров, сделай отдельную ф-ию.
         print(f' быков {bulls}')
         print(f' коров {cows}')
 
 
-if __name__ == '__main__':
-    process()
-    numberComp()
+number = genereatNumber()
+number_comp = numberComp(number)
+number_us = numberUser()
+bulls_cows(number_us, number_comp)
 
+
+# TODO я писал вроде в прошлый раз, чтобы ты тут реализовал отдельные маленькие ф-ии:
+#  генерация числа, она есть, это хорошо, можно даже сделать, чтобы эта ф-ия в глобальную переменную закидывала
+#  загаданное число. Далее сдделай ф-ию, которая будет принимать число, брать эту глобальную переменную
+#  и возвращать коров и быков. Ну и можно сделать ф-ию валидации, котораяя будет принимать число и возвращать,
+#  все ли в нем норм, может возвращать true/false. Вот, когда реализуешь все эти ф-ии тут, потом будешь
+#  их дергать из главного модуля и никаких конфликтов не будет.
