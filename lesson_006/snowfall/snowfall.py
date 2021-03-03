@@ -4,6 +4,7 @@ import simple_draw as sd
 import random
 
 N = 20
+color_snow = sd.COLOR_RED
 
 point_1 = {x + 1: {y: random.randint(100, 600) for y in 'xy'} for x in range(N)}
 sd.resolution = (600, 600)
@@ -13,21 +14,14 @@ background_color = (0, 8, 98)
 x = []
 y = []
 number_point = []
-# TODO тут используй ф-ию items() и доставай сразу и ключ и значение
-for key in point_1:
-    # print(f'первые ключи {key}')
-    # print(f'первые згначения {point_1[key]}')
-    import pdb;pdb.set_trace()
-    # TODO вместо этого цикла можно ведь просто из словаря сразу брать х и у
-    for key1 in point_1[key]:
-        # print(f'вторые ключи {key1}')
-        # print(f'втоорые згначения {point[key][key1]}')
+
+
+for key, coordinate in point_1.items():
+    for key1 in coordinate:
         if key1 == 'x':
             x.append(point_1[key][key1])
-            # print(f'список с координатами Х {x}')
         if key1 == 'y':
             y.append(point_1[key][key1])
-            # print(f'список с координатами У {y}')
 
 while True:
     for idx, val in enumerate(x):
@@ -36,15 +30,12 @@ while True:
         y[idx] -= random.randint(5, 15)
         x[idx] += random.randint(-10, 10)
         point = sd.get_point(x[idx], y[idx])
-        sd.snowflake(center=point, length=long)
+        sd.snowflake(center=point, length=long, color=color_snow)
         if y[idx] < 20:
-
-            y[idx] = 600 # TODO я бы по х тоже генерировал новую позицию для числа.
-            for key in point_1:  # todo чет всеномера выдает
-                print(f'{key}')
-                # TODO number_point у тебя для чего?
-                number_point.append(key)
-                print(number_point)
+            y[idx] = 600
+            x[idx] = random.randint(10, 600)
+            for number_snow, coordinate in point_1.items():
+                print(f'{number_snow}')
 
     if sd.user_want_exit():
         break
