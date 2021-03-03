@@ -1,7 +1,7 @@
-from mastermind_engine import numberComp, process
 print(' Ну что же сыграем в игру ')
 print(' ------------------------ ')
 print(' Введите четырех значное число')
+
 
 
 def numberUser():
@@ -19,7 +19,3 @@ def numberUser():
         else:
             print('Вы ввели одинаковые цифры')
             continue
-
-
-number_us = numberUser()
-
