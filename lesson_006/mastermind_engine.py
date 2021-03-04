@@ -71,12 +71,12 @@ def process():
                 break
 
             cows = 0
-            for j in range(4):
-                for i in range(4):
-                    if nc[j] == nc[i]:
-                        cows += 1
-                        nc[i] = '*'
-                        break
+
+            for i in range(4):
+                if nc[j] == nc[i]:
+                    cows += 1
+                    nc[i] = '*'
+                    break
 
             print(f' быков {bulls}')
             print(f' коров {cows}')
