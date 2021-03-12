@@ -46,7 +46,6 @@ def valid():
             number_user()
 
 
-
 def process():
     global number_comp, number_use
 
