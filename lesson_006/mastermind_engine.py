@@ -14,10 +14,11 @@ def generate_number():
             number_comp = str((''.join(map(str, number_comp_str))))
             # print(f' Сгенерированное число = {number_comp}')
             return number_comp
+        # TODO этот else писать не надо, т.к. в любом случае цикл переходит на следующую итерацию
         else:
             continue
 
-
+# TODO на самом деле эта ф-ия вообще не нужна, как мне кажедтся, тут похоже просто код, который должен быть в главном модуле и не обязательно его оборачивать в ф-ию.
 # def number_user():
 #     while True:
 #         global num
@@ -28,8 +29,9 @@ def generate_number():
 #         number_use = number_us
 #         return number_use, num
 
-
-def valid():
+# TODO пусть ф-ия принимает строку или список, как тебе удобнее и возвращает значение true если валидное и false
+def valid(number):
+    # TODO если это ф-ия, которая проверяет валидность введеного числа, то есть несколько правил, во первых должно быть 4 цифры, во вторых они не должны повторяться
     global number_comp, number_use
 
     number_use = list(number_use)
@@ -40,13 +42,15 @@ def valid():
             if len(set(number_use)) == len(set(number_comp)):
                 return True
             else:
+                # TODO зачем ты тут вызываешь эту ф-ию, ф-ия valid должна возвращать true или false исё.
                 number_user()
 
         else:
             number_user()
 
-
-def process():
+# TODO эта ф-ия, я так понял возвращает быков и коров, тогда она только это и должна делать, и пусть она принимает
+#  число number и сравнивает его с number_comp, больше эта ф-ия ничего делать не должна.
+def process(number):
     global number_comp, number_use
 
     number_use = list(number_use)
@@ -70,6 +74,7 @@ def process():
                     if i == j:
                         cows += 1
                         break
+            # TODO это тут лишнее
             number_user()
 
     return bulls, cows
