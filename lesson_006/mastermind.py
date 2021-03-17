@@ -1,5 +1,4 @@
-from mastermind_engine import generate_number, valid, process, generate_number, num
-import pdb
+from mastermind_engine import generate_number, valid, process
 
 
 print(' Ну что же сыграем в игру ')
@@ -8,18 +7,21 @@ print(' Введите четырех значное число')
 print(' ------------------------ ')
 
 
-pdb.set_trace()
+
 generate_number()
-number = input("Введите число")
 
-
-valid(number)
-if valid(number) == True:
-    print('Вы выграли')
-process(number)
 while True:
+    number = input("Введите число")
+    # TODO проверяем валидно ли число?
+    if not valid(number):
+        print("число не валидно, введите заново")
+        continue
+    bulls, cows = process(number)
     if bulls == 4:
-        print('Вы выграли')
+        print("Поздравляю, вы отгадали")
+        break
     else:
-        print(f'Быков {bulls}')
-        print(f'Коров {cows}')
+        print(f"коров  - {cows}, быков - {bulls}")
+
+
+
