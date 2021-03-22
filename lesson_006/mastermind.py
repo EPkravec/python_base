@@ -2,26 +2,26 @@ from mastermind_engine import generate_number, valid, process
 
 
 print(' Ну что же сыграем в игру ')
-print(' ------------------------ ')
+print(' ------------------------------- ')
 print(' Введите четырех значное число')
-print(' ------------------------ ')
+print(' ------------------------------- ')
 
 
 
 generate_number()
 
 while True:
-    number = input("Введите число")
-    # TODO проверяем валидно ли число?
+    number = input(" Введите число")
     if not valid(number):
-        print("число не валидно, введите заново")
+        print("Число не валидно, введите заново")
         continue
     bulls, cows = process(number)
     if bulls == 4:
         print("Поздравляю, вы отгадали")
         break
     else:
-        print(f"коров  - {cows}, быков - {bulls}")
+        print(f" Быков - {bulls} \n "
+              f"Коров  - {cows}")
 
 
 
