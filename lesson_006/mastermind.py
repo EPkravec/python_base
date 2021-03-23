@@ -19,3 +19,5 @@ while True:
     else:
         print(f" Быков - {bulls} \n "
               f"Коров  - {cows}")
+
+# зачет!
