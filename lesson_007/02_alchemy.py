@@ -1,5 +1,101 @@
 # -*- coding: utf-8 -*-
 
+
+class Water:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+class Air:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+class Fire:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+class Land:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+class Storm:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+class Steam:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+class Mud:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+class Lightning:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+class Dust:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+class Lava:
+
+    def __init__(self, value):
+        self.name = value
+
+    def __str__(self):
+        return self.name
+
+
+air = Air(value='Воздух')
+print(air)
+water = Water(value='Вода')
+print(water)
+
 # Создать прототип игры Алхимия: при соединении двух элементов получается новый.
 # Реализовать следующие элементы: Вода, Воздух, Огонь, Земля, Шторм, Пар, Грязь, Молния, Пыль, Лава.
 # Каждый элемент организовать как отдельный класс.
