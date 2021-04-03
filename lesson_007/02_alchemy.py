@@ -2,8 +2,17 @@
 
 class Water:
 
-    def __init__(self, value):
-        self.name = value
+    def __init__(self):
+        self.name = 'Вода'
+        self.name11 = 'Шторм'
+
+    def __add__(self, other):
+        if other == 'Воздух':
+            return self.name + other
+        if other == 'Огонь':
+            return self.name + other
+        if other == 'Земля':
+            return self.name + other
 
     def __str__(self):
         return self.name
@@ -11,8 +20,8 @@ class Water:
 
 class Air:
 
-    def __init__(self, value):
-        self.name = value
+    def __init__(self):
+        self.name = 'Воздух'
 
     def __str__(self):
         return self.name
@@ -20,8 +29,8 @@ class Air:
 
 class Fire:
 
-    def __init__(self, value):
-        self.name = value
+    def __init__(self):
+        self.name = 'Огонь'
 
     def __str__(self):
         return self.name
@@ -29,8 +38,8 @@ class Fire:
 
 class Land:
 
-    def __init__(self, value):
-        self.name = value
+    def __init__(self):
+        self.name = 'Земля'
 
     def __str__(self):
         return self.name
@@ -38,11 +47,11 @@ class Land:
 
 class Storm:
 
-    def __init__(self, value):
-        self.name = value
+    def __init__(self, name):
+        self.name = name
 
-    def __str__(self):
-        return self.name
+    def __add__(self, other):
+        return self.name + other
 
 
 class Steam:
@@ -90,17 +99,17 @@ class Lava:
         return self.name
 
 
-water = Water(value='Вода')
-air = Air(value='Воздух')
-fire = Fire(value='Огонь')
-land = Land(value='Земля')
+# water = Water(value='Вода')
+# air = Air(value='Воздух')
+# fire = Fire(value='Огонь')
+# land = Land(value='Земля')
 
-print(f'{water} + {air} = {water + air}')
-print(f'{water} + {fire} = {water + fire}')
-print(f'{water} + {land} = {water + land}')
-print(f'{air} + {fire} = {air + air}')
-print(f'{air} + {land} = {air + air}')
-print(f'{fire} + {land} = {fire + air}')
+print(f'{Water()} + {Air()} = {Water() + Air()}')
+print(f'{Water()} + {Fire()} = {Water() + Fire()}')
+print(f'{Water()} + {Land()} = {Water() + Land()}')
+# print(f'{air} + {fire} = {air + fire}')
+# print(f'{air} + {land} = {air + land}')
+# print(f'{fire} + {land} = {fire + air}')
 
 # Создать прототип игры Алхимия: при соединении двух элементов получается новый.
 # Реализовать следующие элементы: Вода, Воздух, Огонь, Земля, Шторм, Пар, Грязь, Молния, Пыль, Лава.
