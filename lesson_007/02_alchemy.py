@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 class Water:
 
     def __init__(self, value):
@@ -91,10 +90,17 @@ class Lava:
         return self.name
 
 
-air = Air(value='Воздух')
-print(air)
 water = Water(value='Вода')
-print(water)
+air = Air(value='Воздух')
+fire = Fire(value='Огонь')
+land = Land(value='Земля')
+
+print(f'{water} + {air} = {water + air}')
+print(f'{water} + {fire} = {water + fire}')
+print(f'{water} + {land} = {water + land}')
+print(f'{air} + {fire} = {air + air}')
+print(f'{air} + {land} = {air + air}')
+print(f'{fire} + {land} = {fire + air}')
 
 # Создать прототип игры Алхимия: при соединении двух элементов получается новый.
 # Реализовать следующие элементы: Вода, Воздух, Огонь, Земля, Шторм, Пар, Грязь, Молния, Пыль, Лава.
